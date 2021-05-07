@@ -29,6 +29,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jface.action.*;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.*;
@@ -245,13 +246,17 @@ public class SampleView extends ViewPart implements IHandler {
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
-			ASTModificationManager.AddImportDeclaration(compilUnit, new String[] {"java", "util", "Set"}); 
+			//ASTModificationManager.AddImportDeclaration(compilUnit, new String[] {"java", "util", "Set"}); 
+			
 			try {
 				
 				 IMarker[] ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 				for (int i = 0; i < ml.length; ++i) {
 				ASTNode node=	ASTManager.getErrorNode(compilUnit, ml[i]);
 				System.out.println(" ERROR NODE   " +node);
+				
+				//ASTModificationManager.RenameSimpleName(compilUnit, node, "newID");
+				ASTModificationManager.AddHelloStatement(compilUnit);
 					
 				}	
 			} catch (CoreException e) {
