@@ -5,6 +5,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.*;
 
 import Utilities.ASTManager;
+import Utilities.ASTModificationManager;
 import Utilities.ErrorsRetriever;
 import Utilities.UtilProjectParser;
 
@@ -244,6 +245,7 @@ public class SampleView extends ViewPart implements IHandler {
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
+			ASTModificationManager.AddImportDeclaration(compilUnit, new String[] {"java", "util", "Set"}); 
 			try {
 				
 				 IMarker[] ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
