@@ -40,7 +40,7 @@ public class ASTModificationManager {
 		  AST ast = cu.getAST();
 		  ASTRewrite rewriter1 = ASTRewrite.create(ast);
 
-		    IPath pathcu = cu.getJavaElement().getPath();
+		  //  IPath pathcu = cu.getJavaElement().getPath();
 
 		  Document document=null;
 		  ICompilationUnit iCompilUnit=(ICompilationUnit) cu.getJavaElement();

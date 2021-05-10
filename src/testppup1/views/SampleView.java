@@ -27,8 +27,11 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
+import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jface.action.*;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -246,6 +249,7 @@ public class SampleView extends ViewPart implements IHandler {
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
+			AST ast = compilUnit.getAST();
 			//ASTModificationManager.AddImportDeclaration(compilUnit, new String[] {"java", "util", "Set"}); 
 			
 			try {
@@ -256,7 +260,53 @@ public class SampleView extends ViewPart implements IHandler {
 				System.out.println(" ERROR NODE   " +node);
 				
 				//ASTModificationManager.RenameSimpleName(compilUnit, node, "newID");
-				ASTModificationManager.AddHelloStatement(compilUnit);
+				//ASTModificationManager.AddHelloStatement(compilUnit);
+			System.out.println(" ERROR NODE TYPE :"+node.getNodeType());
+				
+				if (node instanceof SimpleName)
+				{
+					
+					SimpleName sn1 = ast.newSimpleName("setName");
+					if ( ((SimpleName)node).getIdentifier().equals(sn1.getIdentifier()))
+					{
+						System.out.println(" setName error");
+						ASTModificationManager.RenameSimpleName(compilUnit, node, "setTitle");
+					}
+					SimpleName sn2 = ast.newSimpleName("Person");
+					if ( ((SimpleName)node).getIdentifier().equals(sn2.getIdentifier()))
+					{
+						System.out.println(" Person error");
+						ASTModificationManager.RenameSimpleName(compilUnit, node, "Contact");
+					}
+					SimpleName sn3 = ast.newSimpleName("createPerson");
+					if ( ((SimpleName)node).getIdentifier().equals(sn3.getIdentifier()))
+					{
+						System.out.println(" createPerson error");
+						ASTModificationManager.RenameSimpleName(compilUnit, node, "createContact");
+					}
+					SimpleName sn4 = ast.newSimpleName("getFilteredList");
+					if ( ((SimpleName)node).getIdentifier().equals(sn4.getIdentifier()))
+					{
+						System.out.println(" getFilteredList error");
+						ASTModificationManager.RenameSimpleName(compilUnit, node, "getSortedList");
+					}
+				}
+				if (node instanceof QualifiedName)
+				{
+					//SimpleName sn5 = ast.newSimpleName("import");
+					//SimpleName sn6 = ast.newSimpleName("addressBook.Person");
+				/*	QualifiedName qn1 = ast.newQualifiedName(sn5, sn6);
+					if ( ((SimpleName)node).getIdentifier().equals(qn1.getIdentifier()))
+					{
+						System.out.println(" getFilteredList error");
+						ASTModificationManager.RenameSimpleName(compilUnit, node, "getSortedList");
+					}
+					*/
+					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Contact"} );
+					
+					
+				}	
+				
 					
 				}	
 			} catch (CoreException e) {
