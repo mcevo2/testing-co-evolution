@@ -64,7 +64,7 @@ public static IJavaProject getJavaProject(IProject project) {
         }
         // current project is not a Java project
         
-        return null;
+        return null; 
     }
 	
 public static ArrayList<ICompilationUnit> getCompilationUnits(IProject project) {

@@ -8,6 +8,8 @@ import Utilities.ASTManager;
 import Utilities.ASTModificationManager;
 import Utilities.ErrorsRetriever;
 import Utilities.UtilProjectParser;
+import fr.lip6.meta.ComplexChangeDetection.Change;
+import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
 
 import org.eclipse.jface.viewers.*;
 import org.eclipse.swt.graphics.Image;
@@ -16,8 +18,11 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.commands.IHandlerListener;
 import org.eclipse.core.internal.resources.ResourceException;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
@@ -73,7 +78,7 @@ import org.eclipse.swt.events.SelectionEvent;
 public class SampleView extends ViewPart implements IHandler {
 	public SampleView() {
 		System.out.println(" HERE IS HANDLER ");
-	}
+	} 
 
 	/**
 	 * The ID of the view as specified by the extension.
@@ -244,9 +249,13 @@ public class SampleView extends ViewPart implements IHandler {
 	public Object execute(ExecutionEvent arg0) throws ExecutionException {
 		// TODO Auto-generated method stub
 		System.out.println(" HERE IS HANDLER Execute ");
+		
 		IProject project =UtilProjectParser.getSelectedProject();
 		
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
+		RenameClass renameClass = new RenameClass("Person","Contact","mainTest"); 
+		ArrayList<Change> changes = new ArrayList<Change>();
+	    changes.add(renameClass);
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
 			AST ast = compilUnit.getAST();
@@ -259,37 +268,25 @@ public class SampleView extends ViewPart implements IHandler {
 				ASTNode node=	ASTManager.getErrorNode(compilUnit, ml[i]);
 				System.out.println(" ERROR NODE   " +node);
 				
-				//ASTModificationManager.RenameSimpleName(compilUnit, node, "newID");
-				//ASTModificationManager.AddHelloStatement(compilUnit);
-			System.out.println(" ERROR NODE TYPE :"+node.getNodeType());
 				
+			
 				if (node instanceof SimpleName)
 				{
+					System.out.println(" in IF SIMPLENAME");
+					for(Change c : changes){
+						  System.out.println(" in FOR Loop ");
+						  System.out.println(" OLD  NAAAAME" +((RenameClass)c).getName());
+						  System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
+						  if ( ((SimpleName)node).getIdentifier().equals(((RenameClass)c).getName()))  
+						  {
+							  System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
+								
+					  ASTModificationManager.RenameSimpleName(compilUnit, node, ((RenameClass)c).getNewname());
+					  
+					  }
+					  }
 					
-					SimpleName sn1 = ast.newSimpleName("setName");
-					if ( ((SimpleName)node).getIdentifier().equals(sn1.getIdentifier()))
-					{
-						System.out.println(" setName error");
-						ASTModificationManager.RenameSimpleName(compilUnit, node, "setTitle");
-					}
-					SimpleName sn2 = ast.newSimpleName("Person");
-					if ( ((SimpleName)node).getIdentifier().equals(sn2.getIdentifier()))
-					{
-						System.out.println(" Person error");
-						ASTModificationManager.RenameSimpleName(compilUnit, node, "Contact");
-					}
-					SimpleName sn3 = ast.newSimpleName("createPerson");
-					if ( ((SimpleName)node).getIdentifier().equals(sn3.getIdentifier()))
-					{
-						System.out.println(" createPerson error");
-						ASTModificationManager.RenameSimpleName(compilUnit, node, "createContact");
-					}
-					SimpleName sn4 = ast.newSimpleName("getFilteredList");
-					if ( ((SimpleName)node).getIdentifier().equals(sn4.getIdentifier()))
-					{
-						System.out.println(" getFilteredList error");
-						ASTModificationManager.RenameSimpleName(compilUnit, node, "getSortedList");
-					}
+					
 				}
 				if (node instanceof QualifiedName)
 				{
@@ -305,6 +302,7 @@ public class SampleView extends ViewPart implements IHandler {
 					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Contact"} );
 					
 					
+			//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 				}	
 				
 					
