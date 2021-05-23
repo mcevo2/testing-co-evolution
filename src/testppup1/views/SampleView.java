@@ -249,7 +249,8 @@ public class SampleView extends ViewPart implements IHandler {
 	public Object execute(ExecutionEvent arg0) throws ExecutionException {
 		// TODO Auto-generated method stub
 		System.out.println(" HERE IS HANDLER Execute ");
-		
+		int nbIter=10;
+		//boolean MAX_ITERATIONS=false;
 		IProject project =UtilProjectParser.getSelectedProject();
 		
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
@@ -258,14 +259,29 @@ public class SampleView extends ViewPart implements IHandler {
 	    changes.add(renameClass);
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+		
+				System.out.println(compilUnit);
+			
+			
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+			
 			AST ast = compilUnit.getAST();
 			//ASTModificationManager.AddImportDeclaration(compilUnit, new String[] {"java", "util", "Set"}); 
 			
 			try {
 				
-				 IMarker[] ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-				for (int i = 0; i < ml.length; ++i) {
-				ASTNode node=	ASTManager.getErrorNode(compilUnit, ml[i]);
+				ArrayList<IMarker> ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+				System.out.println(" Length ooooooffff" +ml.size());
+				
+				int counter=0;
+				int indice =0;
+				
+				while(!ml.isEmpty() && counter<nbIter && indice< ml.size()) {
+					counter++;
+					IMarker amarker= ml.get(indice);
+					ml.remove(indice);
+				ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
 				System.out.println(" ERROR NODE   " +node);
 				
 				
@@ -274,12 +290,10 @@ public class SampleView extends ViewPart implements IHandler {
 				{
 					System.out.println(" in IF SIMPLENAME");
 					for(Change c : changes){
-						  System.out.println(" in FOR Loop ");
-						  System.out.println(" OLD  NAAAAME" +((RenameClass)c).getName());
-						  System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
+						
 						  if ( ((SimpleName)node).getIdentifier().equals(((RenameClass)c).getName()))  
 						  {
-							  System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
+							 // System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
 								
 					  ASTModificationManager.RenameSimpleName(compilUnit, node, ((RenameClass)c).getNewname());
 					  
@@ -299,12 +313,22 @@ public class SampleView extends ViewPart implements IHandler {
 						ASTModificationManager.RenameSimpleName(compilUnit, node, "getSortedList");
 					}
 					*/
-					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Contact"} );
+					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Conact"} );
+					indice++;
+					//ASTModificationManager.AddHelloStatement(compilUnit);
 					
 					
 			//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 				}	
+				System.out.println(" HERE WE GET THE NEW ERROR LIST");
+				ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+				System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
 				
+				System.out.println(compilUnit);
+			
+			
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+			
 					
 				}	
 			} catch (CoreException e) {
@@ -313,6 +337,7 @@ public class SampleView extends ViewPart implements IHandler {
 			}
 			
 		}
+		
 	
 		return null;
 	}
