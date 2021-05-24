@@ -10,6 +10,7 @@ import Utilities.ErrorsRetriever;
 import Utilities.UtilProjectParser;
 import fr.lip6.meta.ComplexChangeDetection.Change;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
+import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameProperty;
 
 import org.eclipse.jface.viewers.*;
 import org.eclipse.swt.graphics.Image;
@@ -255,8 +256,16 @@ public class SampleView extends ViewPart implements IHandler {
 		
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
 		RenameClass renameClass = new RenameClass("Person","Contact","mainTest"); 
+		
+		 RenameProperty renameProperty = new RenameProperty("getList","getSortedList","Test");
+		 
 		ArrayList<Change> changes = new ArrayList<Change>();
 	    changes.add(renameClass);
+	 
+	    changes.add(renameProperty);
+	    if(changes.get(1) instanceof RenameClass)
+	 			System.out.println(" check changes 1");
+	 		else System.out.println("changes check 2");
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -277,29 +286,46 @@ public class SampleView extends ViewPart implements IHandler {
 				int counter=0;
 				int indice =0;
 				
-				while(!ml.isEmpty() && counter<nbIter && indice< ml.size()) {
+				while(!ml.isEmpty() && counter<nbIter && indice<ml.size()) {
 					counter++;
 					IMarker amarker= ml.get(indice);
-					ml.remove(indice);
+					indice++;
+					//ml.remove(indice);
 				ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
 				System.out.println(" ERROR NODE   " +node);
 				
 				
 			
 				if (node instanceof SimpleName)
-				{
+				{ 
 					System.out.println(" in IF SIMPLENAME");
 					for(Change c : changes){
-						
+						System.out.println(" MY CHAAANGE IS "+ c.toString());
+						if( c instanceof RenameClass ) {
+							 System.out.println(" In rename class");
 						  if ( ((SimpleName)node).getIdentifier().equals(((RenameClass)c).getName()))  
 						  {
+							 
 							 // System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
 								
 					  ASTModificationManager.RenameSimpleName(compilUnit, node, ((RenameClass)c).getNewname());
 					  
 					  }
+						}
+						if ( c instanceof RenameProperty) {
+							System.out.println(" in rename property");
+							if ( ((SimpleName)node).getIdentifier().equals(((RenameProperty)c).getName()))  
+							  {
+								System.out.println(" in rename property");
+								 // System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
+									
+						  ASTModificationManager.RenameSimpleName(compilUnit, node, ((RenameProperty)c).getNewname());
+						  
+						  }
+							
+						}
 					  }
-					
+				
 					
 				}
 				if (node instanceof QualifiedName)
@@ -314,7 +340,7 @@ public class SampleView extends ViewPart implements IHandler {
 					}
 					*/
 					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Conact"} );
-					indice++;
+					
 					//ASTModificationManager.AddHelloStatement(compilUnit);
 					
 					
