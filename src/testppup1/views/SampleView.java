@@ -322,8 +322,9 @@ public class SampleView extends ViewPart implements IHandler {
 				}	
 				System.out.println(" HERE WE GET THE NEW ERROR LIST");
 				ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-				System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
 				
+				System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+				compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 				System.out.println(compilUnit);
 			
 			
