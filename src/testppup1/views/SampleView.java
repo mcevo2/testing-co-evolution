@@ -6,6 +6,7 @@ import org.eclipse.ui.part.*;
 
 import Utilities.ASTManager;
 import Utilities.ASTModificationManager;
+import Utilities.ChangeDetection;
 import Utilities.ErrorsRetriever;
 import Utilities.UtilProjectParser;
 import fr.lip6.meta.ComplexChangeDetection.Change;
@@ -255,17 +256,8 @@ public class SampleView extends ViewPart implements IHandler {
 		IProject project =UtilProjectParser.getSelectedProject();
 		
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
-		RenameClass renameClass = new RenameClass("Person","Contact","mainTest"); 
 		
-		 RenameProperty renameProperty = new RenameProperty("getList","getSortedList","Test");
-		 
-		ArrayList<Change> changes = new ArrayList<Change>();
-	    changes.add(renameClass);
-	 
-	    changes.add(renameProperty);
-	    if(changes.get(1) instanceof RenameClass)
-	 			System.out.println(" check changes 1");
-	 		else System.out.println("changes check 2");
+		ArrayList<Change> myChanges =ChangeDetection.initializeChangements();
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -299,7 +291,7 @@ public class SampleView extends ViewPart implements IHandler {
 				if (node instanceof SimpleName)
 				{ 
 					System.out.println(" in IF SIMPLENAME");
-					for(Change c : changes){
+					for(Change c : myChanges){
 						System.out.println(" MY CHAAANGE IS "+ c.toString());
 						if( c instanceof RenameClass ) {
 							 System.out.println(" In rename class");
@@ -339,7 +331,7 @@ public class SampleView extends ViewPart implements IHandler {
 						ASTModificationManager.RenameSimpleName(compilUnit, node, "getSortedList");
 					}
 					*/
-					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Conact"} );
+					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Contact"} );
 					
 					//ASTModificationManager.AddHelloStatement(compilUnit);
 					
@@ -368,6 +360,7 @@ public class SampleView extends ViewPart implements IHandler {
 	
 		return null;
 	}
+	
 
 	@Override
 	public boolean isEnabled() {
