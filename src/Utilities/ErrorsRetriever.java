@@ -30,12 +30,16 @@ public class ErrorsRetriever {
 
 		         javaSourceFile.findMarkers(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER,
 
-		            true, IResource.DEPTH_INFINITE);
+		            true, IResource.DEPTH_ZERO);
+		      
 		      
 		      ArrayList<IMarker> list2 = new ArrayList<IMarker>();
 		      for(IMarker m:markers) {
-		    	 
+		    	  if (m.getAttribute(IMarker.SEVERITY, -1)==2)
+		    	  {
+		    		//  System.out.println("IT IS AN ERROR");
 		         list2.add(m);
+		    	  }
 		      }
 
 		    // if(markers.length==0)

@@ -8,6 +8,8 @@ import Utilities.ASTManager;
 import Utilities.ASTModificationManager;
 import Utilities.ChangeDetection;
 import Utilities.ErrorsRetriever;
+import Utilities.Usage;
+import Utilities.UsesManager;
 import Utilities.UtilProjectParser;
 import fr.lip6.meta.ComplexChangeDetection.Change;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
@@ -47,6 +49,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.SWT;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.inject.Inject;
 import org.eclipse.swt.widgets.Button;
@@ -258,98 +261,30 @@ public class SampleView extends ViewPart implements IHandler {
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
 		
 		ArrayList<Change> myChanges =ChangeDetection.initializeChangements();
+		
+		int cpterrors=0;
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-		
-				System.out.println(compilUnit);
-			
-			
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("Compilation unit : "+iCompilUnit.getElementName());
 			
 			AST ast = compilUnit.getAST();
-			//ASTModificationManager.AddImportDeclaration(compilUnit, new String[] {"java", "util", "Set"}); 
+			
 			
 			try {
 				
 				ArrayList<IMarker> ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-				System.out.println(" Length ooooooffff" +ml.size());
+				ArrayList<ASTNode> listnodes= ASTManager.getErrorNodes(compilUnit, ml);
+				cpterrors=cpterrors+ml.size();
 				
 				int counter=0;
 				int indice =0;
-				
-				while(!ml.isEmpty() && counter<nbIter && indice<ml.size()) {
-					counter++;
-					IMarker amarker= ml.get(indice);
-					indice++;
-					//ml.remove(indice);
-				ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
-				System.out.println(" ERROR NODE   " +node);
-				
-				
-			
-				if (node instanceof SimpleName)
-				{ 
-					System.out.println(" in IF SIMPLENAME");
-					for(Change c : myChanges){
-						System.out.println(" MY CHAAANGE IS "+ c.toString());
-						if( c instanceof RenameClass ) {
-							 System.out.println(" In rename class");
-						  if ( ((SimpleName)node).getIdentifier().equals(((RenameClass)c).getName()))  
-						  {
-							 
-							 // System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
-								
-					  ASTModificationManager.RenameSimpleName(compilUnit, node, ((RenameClass)c).getNewname());
-					  
-					  }
-						}
-						if ( c instanceof RenameProperty) {
-							System.out.println(" in rename property");
-							if ( ((SimpleName)node).getIdentifier().equals(((RenameProperty)c).getName()))  
-							  {
-								System.out.println(" in rename property");
-								 // System.out.println(" NEW NAAAAME" +((RenameClass)c).getNewname());
-									
-						  ASTModificationManager.RenameSimpleName(compilUnit, node, ((RenameProperty)c).getNewname());
-						  
-						  }
-							
-						}
-					  }
-				
-					
-				}
-				if (node instanceof QualifiedName)
-				{
-					//SimpleName sn5 = ast.newSimpleName("import");
-					//SimpleName sn6 = ast.newSimpleName("addressBook.Person");
-				/*	QualifiedName qn1 = ast.newQualifiedName(sn5, sn6);
-					if ( ((SimpleName)node).getIdentifier().equals(qn1.getIdentifier()))
-					{
-						System.out.println(" getFilteredList error");
-						ASTModificationManager.RenameSimpleName(compilUnit, node, "getSortedList");
+				 Map<Change,  ArrayList<Usage> > mymap =UsesManager.changesUsages(myChanges, listnodes);
+				/* for (Map.Entry<Change, ArrayList<Usage>> set : mymap.entrySet()) {
+					    System.out.println("HERE IS THE HASHMAP CONTENT "+((Change)set.getKey()).toString() + " = " + set.getValue().toString());
 					}
 					*/
-					ASTModificationManager.AddImportDeclaration(compilUnit,new String[] {"addressBook", "Contact"} );
-					
-					//ASTModificationManager.AddHelloStatement(compilUnit);
-					
-					
-			//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-				}	
-				System.out.println(" HERE WE GET THE NEW ERROR LIST");
-				ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 				
-				System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-				compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-				System.out.println(compilUnit);
-			
-			
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-			
-					
-				}	
+		
 			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -357,7 +292,7 @@ public class SampleView extends ViewPart implements IHandler {
 			
 		}
 		
-	
+	System.out.println(" HOW MANY ERRORS  "+cpterrors);
 		return null;
 	}
 	
@@ -382,5 +317,24 @@ public class SampleView extends ViewPart implements IHandler {
 		System.out.println(" HERE IS HANDLER REMOVE Listener");
 		// TODO Auto-generated method stub
 		
+	}
+	public int[] findCaracter(String node, String strFind)
+	{
+
+        int count = 0, fromIndex = 0;
+        int[] pos= null;
+        
+        while ((fromIndex = node.indexOf(strFind, fromIndex)) != -1 ){
+ 
+            System.out.println("Found at index: " + fromIndex);
+            pos[count]=fromIndex;
+            count++;
+          
+            fromIndex++;
+            
+        }
+        return pos;
+        
+       
 	}
 }

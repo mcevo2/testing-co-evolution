@@ -1,5 +1,7 @@
 package Utilities;
 
+import java.util.ArrayList;
+
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.dom.AST;
@@ -41,6 +43,26 @@ return ast;
 	  ASTNode an=nf.getCoveringNode();
 
 	  return an;
+	}
+	public static ArrayList<ASTNode> getErrorNodes(CompilationUnit cu,ArrayList<IMarker> markers)
+	{
+		ArrayList<ASTNode> ans= new ArrayList<ASTNode>(); 
+		
+		ASTNode an=null;
+		int start,end=0;
+		for( IMarker marker: markers) {
+		
+		 start = marker.getAttribute(IMarker.CHAR_START, 0);
+
+		  end = marker.getAttribute(IMarker.CHAR_END, 0);
+
+		  NodeFinder nf = new NodeFinder(cu.getRoot(), start, end-start);
+
+	   an=nf.getCoveringNode( );
+	   ans.add(an);
+		}
+
+	  return ans;
 	}
 
 }
