@@ -8,7 +8,9 @@ import Utilities.ASTManager;
 import Utilities.ASTModificationManager;
 import Utilities.ChangeDetection;
 import Utilities.ErrorsRetriever;
+import Utilities.Resolutions;
 import Utilities.Usage;
+import Utilities.UsagePattern;
 import Utilities.UsesManager;
 import Utilities.UtilProjectParser;
 import fr.lip6.meta.ComplexChangeDetection.Change;
@@ -279,10 +281,20 @@ public class SampleView extends ViewPart implements IHandler {
 				int counter=0;
 				int indice =0;
 				 Map<Change,  ArrayList<Usage> > mymap =UsesManager.changesUsages(myChanges, listnodes);
-				/* for (Map.Entry<Change, ArrayList<Usage>> set : mymap.entrySet()) {
-					    System.out.println("HERE IS THE HASHMAP CONTENT "+((Change)set.getKey()).toString() + " = " + set.getValue().toString());
+				for (Map.Entry<Change, ArrayList<Usage>> set : mymap.entrySet()) {
+					   // System.out.println("HERE IS THE HASHMAP CONTENT "+((Change)set.getKey()).toString() + " = " + set.getValue().toString());
+					ArrayList<Usage> u = set.getValue();
+					for(Usage us: u)
+					{
+						//System.out.println(" MAP USAGE "+us.getNode());
+						if(us.getPattern()==UsagePattern.variableDeclaration)
+						{
+							Resolutions.renaming(compilUnit, us.getNode(), ((RenameClass)set.getKey()).getNewname());
+							
+						}
 					}
-					*/
+				}
+					
 				
 		
 			} catch (CoreException e) {

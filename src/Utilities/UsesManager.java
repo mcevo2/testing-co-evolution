@@ -130,6 +130,7 @@ public class UsesManager {
 			{
 				System.out.println(" IN VAR DEC " +error);
 				usage.setPattern(UsagePattern.variableDeclaration);
+				
 			}
 			if(((SimpleName)error).getIdentifier().equals("get"+((RenameClass)change).getName()))
 			{
@@ -141,11 +142,11 @@ public class UsesManager {
 				System.out.println(" in CREATE OBJ "+error);
 				usage.setPattern(UsagePattern.createObject);
 			}
-			if(((SimpleName)error).getIdentifier().contains("("+((RenameClass)change).getName()+")"))
+		/*	if(((SimpleName)error).getIdentifier().contains("("+((RenameClass)change).getName()+")"))
 			{
 				System.out.println(" in CAST "+error);
 				usage.setPattern(UsagePattern.castObject);
-			}
+			}*/
 		}
 			if (change instanceof RenameProperty)
 			{
