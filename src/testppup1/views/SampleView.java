@@ -93,13 +93,13 @@ public class SampleView extends ViewPart implements IHandler {
 	public static final String ID = "testppup1.views.SampleView";
 
 	@Inject IWorkbench workbench;
-	
+
 	private TableViewer viewer;
 	private Action action1;
 	private Action action2;
 	private Action doubleClickAction;
 	private Text txtEnterProject;
-	 
+
 
 	class ViewLabelProvider extends LabelProvider implements ITableLabelProvider {
 		@Override
@@ -119,7 +119,7 @@ public class SampleView extends ViewPart implements IHandler {
 	@Override
 	public void createPartControl(Composite parent) {
 		parent.setLayout(null);
-		
+
 		Button btnNewButton = new Button(parent, SWT.NONE);
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -131,26 +131,26 @@ public class SampleView extends ViewPart implements IHandler {
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		Table table = viewer.getTable();
 		table.setBounds(134, -141, 460, 574);
-		
+
 		viewer.setContentProvider(ArrayContentProvider.getInstance());
 		viewer.setInput(new String[] { "One", "Two", "Three" });
-	viewer.setLabelProvider(new ViewLabelProvider());
+		viewer.setLabelProvider(new ViewLabelProvider());
 
 		// Create the help context id for the viewer's control
 		workbench.getHelpSystem().setHelp(viewer.getControl(), "testppup1.viewer");
 		getSite().setSelectionProvider(viewer);
-		
+
 		Label label = new Label(parent, SWT.NONE);
 		label.setBounds(124, 318, 59, 14);
-		
+
 		txtEnterProject = new Text(parent, SWT.BORDER);
 		txtEnterProject.setText("enter project");
 		txtEnterProject.setBounds(418, 315, 64, 19);
-		
+
 		Button btnCheckButton = new Button(parent, SWT.CHECK);
 		btnCheckButton.setBounds(292, 139, 115, 18);
 		btnCheckButton.setText("Check Button");
-		
+
 		Button btnI = new Button(parent, SWT.CHECK);
 		btnI.setBounds(315, 223, 94, 18);
 		btnI.setText("i");
@@ -191,7 +191,7 @@ public class SampleView extends ViewPart implements IHandler {
 		// Other plug-ins can contribute there actions here
 		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
 	}
-	
+
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(action1);
 		manager.add(action2);
@@ -206,8 +206,8 @@ public class SampleView extends ViewPart implements IHandler {
 		action1.setText("Action 1");
 		action1.setToolTipText("Action 1 tooltip");
 		action1.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
-			getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
-		
+				getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
+
 		action2 = new Action() {
 			public void run() {
 				showMessage("Action 2 executed");
@@ -235,9 +235,9 @@ public class SampleView extends ViewPart implements IHandler {
 	}
 	private void showMessage(String message) {
 		MessageDialog.openInformation(
-			viewer.getControl().getShell(),
-			"Sample View",
-			message);
+				viewer.getControl().getShell(),
+				"Sample View",
+				message);
 	}
 
 	@Override
@@ -249,7 +249,7 @@ public class SampleView extends ViewPart implements IHandler {
 	public void addHandlerListener(IHandlerListener arg0) {
 		// TODO Auto-generated method stub
 		System.out.println(" HERE IS HANDLER  LISTENER");
-		
+
 	}
 
 	@Override
@@ -259,61 +259,178 @@ public class SampleView extends ViewPart implements IHandler {
 		int nbIter=10;
 		//boolean MAX_ITERATIONS=false;
 		IProject project =UtilProjectParser.getSelectedProject();
-		
+
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
-		
+
 		ArrayList<Change> myChanges =ChangeDetection.initializeChangements();
-		
+
 		int cpterrors=0;
+		for( int pass =0;pass<2;pass++) {
+			System.out.println(" PASS number: "+pass);
+		
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
 			System.out.println("Compilation unit : "+iCompilUnit.getElementName());
-			
+
 			AST ast = compilUnit.getAST();
-			
-			
+
+
 			try {
-				
+
 				ArrayList<IMarker> ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-				ArrayList<ASTNode> listnodes= ASTManager.getErrorNodes(compilUnit, ml);
-				cpterrors=cpterrors+ml.size();
-				
+				//System.out.println(" Length ooooooffff" +ml.size());
+
 				int counter=0;
 				int indice =0;
-				 Map<Change,  ArrayList<Usage> > mymap =UsesManager.changesUsages(myChanges, listnodes);
-				for (Map.Entry<Change, ArrayList<Usage>> set : mymap.entrySet()) {
-					   // System.out.println("HERE IS THE HASHMAP CONTENT "+((Change)set.getKey()).toString() + " = " + set.getValue().toString());
-					ArrayList<Usage> u = set.getValue();
-					for(Usage us: u)
+
+				while(!ml.isEmpty() && indice< ml.size()) {
+					System.out.println(" Total number of errors "+ml.size());
+
+					//counter++;
+					
+					IMarker amarker= ml.get(0);
+					ml.remove(0);
+				
+					System.out.println(" INDICE "+indice);
+					
+					System.out.println(" CURRENT ERROR "+amarker);
+					if(iCompilUnit.getElementName().equals("AbstractAttribution.java"))
 					{
-						//System.out.println(" MAP USAGE "+us.getNode());
-						if(us.getPattern()==UsagePattern.variableDeclaration)
-						{
-							Resolutions.renaming(compilUnit, us.getNode(), ((RenameClass)set.getKey()).getNewname());
+						System.out.println("NUMber of errors here  "+ml.size());
+						System.out.println(" CURRENT ERROR "+amarker);
+					}
+					//	ml.remove(indice);
+					ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
+					//System.out.println(" ERROR NODE   " +node);
+					Usage usage =null;
+					for(Change c : myChanges){
+
+						usage = UsesManager.classify(c, amarker, compilUnit);
+					if(usage.getPattern() ==null)
+					{
+						indice++;	
+					}
+					else {
+						if(pass==1) {
+						switch (usage.getPattern()) {
+						
+						case variableDeclarationRename:
+							
+							Resolutions.renaming(compilUnit, node,  (((RenameClass)c).getNewname()));
+							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+							break;
+						case inImportRename:
+							Resolutions.resolveImport(compilUnit, c, node, amarker, (((RenameClass)c).getNewname()));
+							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+							break;
+						case inImportDelete:
+							Resolutions.DeleteImport(compilUnit,c, node);
+							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+							break;
+						case VariableDeclarationDelete:
+							System.out.println(" CURRENT PASS:  "+pass);
+							System.out.println("ENtry Point  "+node+  "USAGE NODE "+usage.getNode());
+							Resolutions.deleteVariableDeclaration(compilUnit, c, node);
+							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+							break;
+						
+							
+						default:
+							
+							break;
+						
 							
 						}
+						}
+						else {
+							
+							switch (usage.getPattern()) {
+							
+							case variableDeclarationRename:
+								System.out.println("ENtry Point of variable declaration "+node+  "USAGE NODE "+usage.getNode());
+								Resolutions.renaming(compilUnit, node,  (((RenameClass)c).getNewname()));
+								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								break;
+							case inImportRename:
+								Resolutions.resolveImport(compilUnit, c, node, amarker, (((RenameClass)c).getNewname()));
+								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								break;
+							
+							case VariableUseDelete:
+								System.out.println(" CURRENT PASS:  "+pass);
+								System.out.println("ENtry Point of variable use  "+node);
+								Resolutions.deleteVariablAssignment(compilUnit, c, node);
+								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								break;
+							case parameterDelete:
+								//System.out.println("WELCOME TO PARAM DELETE");
+								Resolutions.deleteParameter(compilUnit, c, node);
+							//	compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								
+								
+							default:
+								
+								break;
+							
+								
+							}
+						}
 					}
-				}
+						
+					
+					
+					
+							
+					 
+
+					}
+
+
+
+					//	System.out.println(" HERE WE GET THE NEW ERROR LIST");
+					
+
+
 					
 				
+					 for ( IMarker mr : ml )
+					 {
+						 System.out.println(" ERROR AFTER iter  "+mr);
+					 }
+			
+
 		
-			} catch (CoreException e) {
+
+				}
+
+
+			} 
+			catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
-		
-	System.out.println(" HOW MANY ERRORS  "+cpterrors);
+
+		System.out.println(" HOW MANY ERRORS  "+cpterrors);
+		}
 		return null;
 	}
-	
+
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		System.out.println(" HERE IS HANDLER isENABLED");
-		
+
 		return true;
 	}
 
@@ -328,25 +445,25 @@ public class SampleView extends ViewPart implements IHandler {
 	public void removeHandlerListener(IHandlerListener arg0) {
 		System.out.println(" HERE IS HANDLER REMOVE Listener");
 		// TODO Auto-generated method stub
-		
+
 	}
 	public int[] findCaracter(String node, String strFind)
 	{
 
-        int count = 0, fromIndex = 0;
-        int[] pos= null;
-        
-        while ((fromIndex = node.indexOf(strFind, fromIndex)) != -1 ){
- 
-            System.out.println("Found at index: " + fromIndex);
-            pos[count]=fromIndex;
-            count++;
-          
-            fromIndex++;
-            
-        }
-        return pos;
-        
-       
+		int count = 0, fromIndex = 0;
+		int[] pos= null;
+
+		while ((fromIndex = node.indexOf(strFind, fromIndex)) != -1 ){
+
+			System.out.println("Found at index: " + fromIndex);
+			pos[count]=fromIndex;
+			count++;
+
+			fromIndex++;
+
+		}
+		return pos;
+
+
 	}
 }

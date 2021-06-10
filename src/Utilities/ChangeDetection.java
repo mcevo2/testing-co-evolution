@@ -3,6 +3,7 @@ package Utilities;
 import java.util.ArrayList;
 
 import fr.lip6.meta.ComplexChangeDetection.Change;
+import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.DeleteClass;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameProperty;
 
@@ -15,11 +16,13 @@ public class ChangeDetection {
 		 //RenameProperty renameProperty = new RenameProperty("getList","getSortedList","???");
 		// RenameProperty renameProperty1 = new RenameProperty("Num","Number","???");
 		 
-		RenameClass renameClass = new RenameClass("Feature","Featuretoto","org.eclipse.ocl.pivot"); 
+	//	RenameClass renameClass = new RenameClass("Feature","Featuretoto","org.eclipse.ocl.pivot"); 
 		//RenameClass renameClass1 = new RenameClass("Import","Importtoto","org.eclipse.ocl.pivot"); 
 		//RenameClass renameClass2= new RenameClass("Annotation","Annotationtoto","org.eclipse.ocl.pivot"); 
+		
+		DeleteClass deleteClass =  new DeleteClass("Person");
 		ArrayList<Change> changes = new ArrayList<Change>();
-	  changes.add(renameClass);
+//	  changes.add(renameClass);
 	//  changes.add(renameClass1);
 	  
 	 //  changes.add(renameClass1);
@@ -27,6 +30,7 @@ public class ChangeDetection {
 	 
 	   // changes.add(renameProperty);
 	    //changes.add(renameProperty1);
+		changes.add(deleteClass);
 	    
 	    return changes;
 	}

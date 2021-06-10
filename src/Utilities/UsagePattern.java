@@ -1,10 +1,12 @@
 package Utilities;
 
 public enum UsagePattern {
-	variableDeclaration,createObject,getObject,setObject,castObject,
+	variableDeclarationRename,createObjectRename,getObjectRename,setObjectRename,castObjectRename,
 	getAttribute,setAttribute,getClass_Attribute,accessAttribute,
 	callMethod,getClass_call,
-	inImport,
+	VariableDeclarationDelete,VariableUseDelete,
+	parameterDelete,
+	inImportRename,inImportDelete,
 	
 
 }

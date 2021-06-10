@@ -1,14 +1,24 @@
 package Utilities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.Assignment;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ExpressionStatement;
+import org.eclipse.jdt.core.dom.FieldDeclaration;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.NodeFinder;
+import org.eclipse.jdt.core.dom.QualifiedName;
+import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
+import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
+import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
+import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 
 public class ASTManager {
 	public static CompilationUnit getCompilationUnit(ICompilationUnit iCompilUnit)
@@ -39,6 +49,8 @@ return ast;
 		     
 
 		  NodeFinder nf = new NodeFinder(cu.getRoot(), start, end-start);
+		 
+			 
 
 	  ASTNode an=nf.getCoveringNode();
 
@@ -64,5 +76,114 @@ return ast;
 
 	  return ans;
 	}
+	public static boolean checkImportDeclaration( ASTNode node)
+	{
+		boolean isImport=false;
+		
+		
+		
+		if(node.getParent() instanceof ImportDeclaration)
+			isImport=true;
+		
+		
+		
+		return isImport;
+	}
+	public static List<ASTNode> getChildren(ASTNode node) {
+	    List<ASTNode> children = new ArrayList<ASTNode>();
+	    List list = node.structuralPropertiesForType();
+	    for (int i = 0; i < list.size(); i++) {
+	        Object child = node.getStructuralProperty((StructuralPropertyDescriptor)list.get(i));
+	        if (child instanceof ASTNode) {
+	            children.add((ASTNode) child);
+	            //System.out.println("HERE IS A CHILD "+child);
+	        }
+	    }
+	    return children;
+	}
+	public static ASTNode findVariableDeclarationFragment(ASTNode node) {
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+		
+		
+			if(nodeTemp instanceof VariableDeclarationFragment ){
+				
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+	}
+	
+	public static ASTNode findAssignment(ASTNode node) {
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+		
+		
+			if(nodeTemp instanceof Assignment ){
+				
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+	}
+	public static ASTNode findFieldOrVariableDeclarations(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+		
+		
+			if(nodeTemp instanceof FieldDeclaration || nodeTemp instanceof VariableDeclarationStatement){
+				if( nodeTemp instanceof ExpressionStatement)
+				{
+				
+					System.out.println("Your wanted node  "+nodeTemp);
+				}
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+	}
+public static ASTNode findExpressionStatement(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+		
+		
+			if(nodeTemp instanceof ExpressionStatement){
+				
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+	}
+	public static ASTNode findParameterInMethodDeclaration(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+			//System.out.println("khelladi Parameter ? "+nodeTemp.getClass());
+			
+			if(nodeTemp instanceof SingleVariableDeclaration){//MethodDeclaration){no need to get to method declaration and then delete the parameter, just delete the parameter directly
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+		
+	}
+
 
 }
