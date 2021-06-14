@@ -330,7 +330,55 @@ public class Resolutions {
 
 	}
 
+public static void deleteInstanceClass(CompilationUnit cu, ASTNode foundInstanceCreation)
+{
+	ASTNode nodeTemp = foundInstanceCreation;
+	AST ast = cu.getAST();
+	ASTRewrite rewriter1 = ASTRewrite.create(ast);
 
+	//  IPath pathcu = cu.getJavaElement().getPath();
+
+	Document document=null;
+	ICompilationUnit iCompilUnit=(ICompilationUnit) cu.getJavaElement();
+	
+	boolean gotcha = false;
+	while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+		//check if it is in a variable declaration
+		if(nodeTemp instanceof VariableDeclarationStatement){
+			gotcha = true;//it means that this is treated above as part of declaration
+		}
+		
+		nodeTemp = nodeTemp.getParent();
+	}
+	
+	if(!gotcha){
+		System.out.println(" IN INSTANCE CASE "); 
+		//here we treat the new DeletedType() that is not part of declaration statement
+		ASTNode foundStatement = ASTManager.findStatement(foundInstanceCreation);
+		//here we delete the statements where the variable is used
+		if(foundStatement != null && foundStatement instanceof ExpressionStatement){//TODO what about checking var decla ??
+			//System.out.println("		*** found statement to delete >>> "+foundStatement);
+			try {
+				document = new Document(iCompilUnit.getSource());
+
+
+
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			rewriter1.remove(foundStatement, null);  
+
+
+			TextEdit edits = rewriter1.rewriteAST(document, null);
+			if( edits!=null)
+			{
+				System.out.println(" FOUND Instance in saving part");
+				SaveModification.SaveModif(cu, edits);
+			}
+		}
+	}
+}
 	public static void deleteVariablAssignment(CompilationUnit cu, Change change,ASTNode node)
 	{
 		ASTNode variableAssignmentToDelete=null;

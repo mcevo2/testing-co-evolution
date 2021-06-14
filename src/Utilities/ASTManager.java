@@ -9,6 +9,7 @@ import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.Assignment;
+import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
@@ -230,6 +231,23 @@ public static ASTNode findExpressionStatement(ASTNode node) {
 		return null;
 	}
 
+public static ASTNode findClassInstanceCreations(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+			//System.out.println("khelladi new class instance ? "+nodeTemp.getClass());
+			
+			if(nodeTemp instanceof ClassInstanceCreation){
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+		
+	}
+	
 public static ASTNode findMethodInvocation(ASTNode node) {
 		
 		ASTNode nodeTemp = node;

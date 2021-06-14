@@ -43,7 +43,9 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
+import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
@@ -286,9 +288,6 @@ public class SampleView extends ViewPart implements IHandler {
 
 				ArrayList<IMarker> ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 
-
-				int indice =0;
-
 				while(!ml.isEmpty()) {
 					System.out.println(" Total number of errors "+ml.size());
 
@@ -305,17 +304,17 @@ public class SampleView extends ViewPart implements IHandler {
 					adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
 					anImport =ASTManager.findImportDeclaration(node);
 					if(anImport != null && anImport instanceof ImportDeclaration){
-						
+
 						//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
 						Resolutions.DeleteImport(compilUnit,node);
 						compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 
-					
+
 					}
 
 					if(adeclaration != null && (adeclaration instanceof FieldDeclaration || adeclaration instanceof VariableDeclarationStatement)){
 
-						//TODO here if you delete a field declaration, delete its variable usages locally
+
 						System.out.println(" FOUND DECLRATION   "+adeclaration);
 						Resolutions.deleteUsedVariables(compilUnit,adeclaration);
 
@@ -334,16 +333,22 @@ public class SampleView extends ViewPart implements IHandler {
 
 
 					}
+					ASTNode foundInstanceCreation = ASTManager.findClassInstanceCreations(node);
+					//here treat when we have new DeletedType() alone not in a variable declaration
+					if(foundInstanceCreation != null && foundInstanceCreation instanceof ClassInstanceCreation){
+						System.out.println(" FOUND Instance");
+						Resolutions.deleteInstanceClass(compilUnit, foundInstanceCreation);
+						compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+					}
 					
+
 					ASTNode foundParameter = ASTManager.findParameterInMethodDeclaration(node);
-					//here we delete the parameters in method declarations
+
 					if(foundParameter != null && foundParameter instanceof SingleVariableDeclaration){
-						//((MethodDeclaration)foundParameter.getParent()).parameters().remove(foundParameter);
-						//TODO here if you delete a parameter, the call of this method shoud be treated above
-						//so far their statement are being deleted rather than just delete the parameter in the call of this method
-						//System.out.println("deleting of parameter in method declaration adn also its used varaible statements");
-					Resolutions.deleteParameter(compilUnit, foundParameter);
-					compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+						Resolutions.deleteParameter(compilUnit, foundParameter);
+						compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 
 					}
 
