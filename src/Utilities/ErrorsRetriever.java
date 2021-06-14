@@ -1,5 +1,6 @@
 package Utilities;
 
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,8 +25,10 @@ public class ErrorsRetriever {
 
 		 
 
-		      IResource javaSourceFile = cu.getUnderlyingResource();
-
+		      IResource javaSourceFile =  cu.getResource();//cu.getUnderlyingResource();
+		     // javaSourceFile.
+		  
+		   
 		      IMarker[] markers = 
 
 		         javaSourceFile.findMarkers(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER,

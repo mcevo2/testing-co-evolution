@@ -13,6 +13,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
+import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.NodeFinder;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
@@ -23,14 +24,33 @@ import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 public class ASTManager {
 	public static CompilationUnit getCompilationUnit(ICompilationUnit iCompilUnit)
 	{
+//JavaParser jp = new JavaParser();
 		ASTParser parser = ASTParser.newParser(AST.JLS8);
 		parser.setResolveBindings(true);
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setBindingsRecovery(true);
 		parser.setSource(iCompilUnit);
+		
+	//	parser.setBindingsRecovery(true);
+	//	CompilationUnit cu = (CompilationUnit) parser.createAST( null);
+		JavaVisitor jVisitor = new JavaVisitor();
+		CompilationUnit newUnit = (CompilationUnit) parser.createAST(null /* IProgressMonitor */); // parse
+		jVisitor.process(newUnit);
+
+		return newUnit;
+	}
+	public static CompilationUnit getCompilationUnit2(ICompilationUnit iCompilUnit)
+	{
+//JavaParser jp = new JavaParser();
+		ASTParser parser = ASTParser.newParser(AST.JLS8);
 		parser.setResolveBindings(true);
+		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setBindingsRecovery(true);
+		parser.setSource(iCompilUnit);
+		
+	//	parser.setBindingsRecovery(true);
 		CompilationUnit cu = (CompilationUnit) parser.createAST( null);
+		
 
 		return cu;
 	}
@@ -75,6 +95,21 @@ return ast;
 		}
 
 	  return ans;
+	}
+	public static ASTNode findImportDeclaration(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+			//System.out.println("khelladi import ? "+nodeTemp.getClass());
+			
+			if(nodeTemp instanceof ImportDeclaration){
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
 	}
 	public static boolean checkImportDeclaration( ASTNode node)
 	{
@@ -132,18 +167,13 @@ return ast;
 		
 		return null;
 	}
-	public static ASTNode findFieldOrVariableDeclarations(ASTNode node) {
+public static ASTNode findFieldOrVariableDeclarations(ASTNode node) {
 		
 		ASTNode nodeTemp = node;
 		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
-		
-		
+			//System.out.println("khelladi Field/Variable declaration ? "+nodeTemp.getClass());
+			
 			if(nodeTemp instanceof FieldDeclaration || nodeTemp instanceof VariableDeclarationStatement){
-				if( nodeTemp instanceof ExpressionStatement)
-				{
-				
-					System.out.println("Your wanted node  "+nodeTemp);
-				}
 				return nodeTemp;
 			}
 			
@@ -184,6 +214,35 @@ public static ASTNode findExpressionStatement(ASTNode node) {
 		return null;
 		
 	}
+	public static ASTNode findStatement(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+			//System.out.println("khelladi Expression/Variable declaration Statement ? "+nodeTemp.getClass());
+			
+			if(nodeTemp instanceof ExpressionStatement || nodeTemp instanceof VariableDeclarationStatement){
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+	}
 
-
+public static ASTNode findMethodInvocation(ASTNode node) {
+		
+		ASTNode nodeTemp = node;
+		while (nodeTemp != null && !(nodeTemp instanceof CompilationUnit)) {
+			//System.out.println("khelladi method invocation ? "+nodeTemp.getClass());
+			
+			if(nodeTemp instanceof MethodInvocation){
+				return nodeTemp;
+			}
+			
+			nodeTemp = nodeTemp.getParent();
+		}
+		
+		return null;
+	}
 }

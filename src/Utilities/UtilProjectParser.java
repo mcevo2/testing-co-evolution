@@ -88,7 +88,7 @@ public static ArrayList<ICompilationUnit> getCompilationUnits(IProject project) 
 			    			if(javaEle instanceof ICompilationUnit){//alternativley check if the element kind is == 5, it is CompilationUnit
 			    				ICompilationUnit compilUnit = (ICompilationUnit) javaEle;
 			    				//Next instruction is another way to get ICompilationUnit
-			    			//ICompilationUnit compilUnit= JavaCore.createCompilationUnitFrom((IFile)javaEle.getCorrespondingResource());
+			    		//	ICompilationUnit compilUnit= JavaCore.createCompilationUnitFrom((IFile)javaEle.getCorrespondingResource());
 
 			    				if (compilUnit != null) {
 			    					

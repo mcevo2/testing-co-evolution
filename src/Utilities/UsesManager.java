@@ -2,6 +2,7 @@ package Utilities;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -9,9 +10,13 @@ import org.eclipse.core.resources.IMarker;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.Assignment;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ExpressionStatement;
+import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
+import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
 import org.eclipse.jdt.internal.compiler.lookup.VariableBinding;
@@ -191,36 +196,86 @@ public class UsesManager {
 			}
 			if(change instanceof DeleteClass)
 			{
-				if(ASTManager.findAssignment(errornode)!=null)
-				{
 
 
-					System.out.println("LEFT HAND SIDE "+((Assignment)ASTManager.findAssignment(errornode)).getLeftHandSide());
-
-					System.out.println("LEFT HAND SIDE BINNDING  "+((SimpleName)errornode).resolveTypeBinding().getName());
-					if(((SimpleName)errornode).resolveTypeBinding().getName().equals(((DeleteClass)change).getName()))
-					{
-						usage.setPriority(1);
-						usage.setTreated(false);
-						usage.setPattern(UsagePattern.VariableUseDelete);
-					}
-
-				}
-
-				if(ASTManager.findVariableDeclarationFragment(errornode)!=null)
-				{
-					System.out.println(" your in fragment declar  "+errornode);
-				}
 				if(((SimpleName)errornode).getIdentifier().equals(((DeleteClass)change).getName()))
 				{
-					if(ASTManager.findFieldOrVariableDeclarations(errornode)!=null)
-					{
+					
+						
+						Iterator it = null;
+						ASTNode foundDeclaration =ASTManager.findFieldOrVariableDeclarations(errornode);
+						if(foundDeclaration instanceof FieldDeclaration){
+							it = ((FieldDeclaration) foundDeclaration).fragments().iterator();
+						} else if(foundDeclaration instanceof VariableDeclarationStatement){
+							it = ((VariableDeclarationStatement) foundDeclaration).fragments().iterator();
+						} else if(foundDeclaration instanceof SingleVariableDeclaration){
+							ArrayList<SingleVariableDeclaration> list = new ArrayList<SingleVariableDeclaration>();
+							list.add((SingleVariableDeclaration) foundDeclaration);
+							it = list.iterator();
+						} 
 
-						System.out.println(" IN VAR DEC " +errornode+" BINDING: "+((SimpleName)errornode).resolveTypeBinding().getName());
+						while(it != null && it.hasNext()){
+
+							Object obj = it.next();
+							System.out.println(" in boucle whileeee:  "+obj);
+							//System.out.println("frgament "+obj);
+							//System.out.println("frgament class "+obj.getClass());
+							/*here what I should do is 
+							 * 1) check the build table of bindings,, 
+							 * 2) find used varaiables
+							 * 3) delete their usage statements or the element if it is a parameter
+							 */
+							ArrayList<ASTNode> list_of_usage = new ArrayList<ASTNode>();
+							if(obj instanceof VariableDeclarationFragment){
+								System.out.println(" in Variable declaration fragment case ");
+
+								if(JavaVisitor.getManageBindings().getBindingsNodes().containsKey(((VariableDeclarationFragment) obj).resolveBinding())){
+									//System.out.println("		found variable >>> "+((VariableDeclarationFragment) obj).resolveBinding().getName());
+
+									list_of_usage = JavaVisitor.getManageBindings().getBindingsNodes().get(((VariableDeclarationFragment) obj).resolveBinding());
+									for(ASTNode astNode : list_of_usage){
+										System.out.println(" in test boucle printing nodes :  "+astNode);
+									}
+								}
+
+							} else if (obj instanceof SingleVariableDeclaration){
+								System.out.println(" in SingleVariableDeclaration case ");
+
+								if(JavaVisitor.getManageBindings().getBindingsNodes().containsKey(((SingleVariableDeclaration) obj).resolveBinding())){
+									//System.out.println("		found variable >>> "+((SingleVariableDeclaration) obj).resolveBinding().getName());
+
+									list_of_usage = JavaVisitor.getManageBindings().getBindingsNodes().get(((SingleVariableDeclaration) obj).resolveBinding());
+								}
+
+							}
+							for(ASTNode astNode : list_of_usage){
+
+								ASTNode foundStatement = ASTManager.findStatement(astNode);
+
+								//here we delete the statements where the variable is used
+								if(foundStatement != null && foundStatement instanceof ExpressionStatement || foundStatement instanceof VariableDeclarationStatement){
+									System.out.println("		*** found statement to delete >>> "+foundStatement);
+
+									//foundStatement.delete();
+
+								}
+
+								//ASTNode foundParameter = DeleteResolution.findParameter(astNode);
+								//now we should delete the parameters and then update the method declaration
+								//here two method invocation should exist where the used varaible is contained in one
+							}				
+
+						}
+
+
+						//		System.out.println(" IN VAR DEC " +errornode+" BINDING: "+((SimpleName)errornode).resolveTypeBinding().getName());
+						if(foundDeclaration instanceof VariableDeclarationStatement){
+							it = ((VariableDeclarationStatement) foundDeclaration).fragments().iterator();
+						} 
 						usage.setPriority(0);
 						usage.setTreated(false);
 						usage.setPattern(UsagePattern.VariableDeclarationDelete);
-					}
+					
 					if(ASTManager.findParameterInMethodDeclaration(usage.getNode())!=null)
 					{
 						System.out.println("YOUR IN PARAMETER CASE");
@@ -250,6 +305,7 @@ public class UsesManager {
 		return usage;
 
 	}
+
 	public static  ArrayList<Usage> getUsages(Change change, ArrayList<IMarker> errors,CompilationUnit cu)
 	{
 		ArrayList<Usage> usages= new ArrayList<Usage>();

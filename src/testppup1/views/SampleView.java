@@ -7,7 +7,10 @@ import org.eclipse.ui.part.*;
 import Utilities.ASTManager;
 import Utilities.ASTModificationManager;
 import Utilities.ChangeDetection;
+import Utilities.DeleteClassResolution;
 import Utilities.ErrorsRetriever;
+import Utilities.JavaParser;
+import Utilities.JavaVisitor;
 import Utilities.Resolutions;
 import Utilities.Usage;
 import Utilities.UsagePattern;
@@ -41,9 +44,14 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
+import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jface.action.*;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.*;
@@ -256,158 +264,96 @@ public class SampleView extends ViewPart implements IHandler {
 	public Object execute(ExecutionEvent arg0) throws ExecutionException {
 		// TODO Auto-generated method stub
 		System.out.println(" HERE IS HANDLER Execute ");
-		int nbIter=10;
-		//boolean MAX_ITERATIONS=false;
-		IProject project =UtilProjectParser.getSelectedProject();
+		//ArrayList<Change> myChanges =ChangeDetection.initializeChangements();
+		//ArrayList <ASTNode> declarations = new ArrayList <ASTNode>();
 
+		IProject project =UtilProjectParser.getSelectedProject();
 		ArrayList<ICompilationUnit> ListICompilUnit =UtilProjectParser.getCompilationUnits(project);
 
-		ArrayList<Change> myChanges =ChangeDetection.initializeChangements();
 
+		ASTNode adeclaration=null;
+		ASTNode anImport=null;
+		JavaParser jp = new JavaParser();
 		int cpterrors=0;
-		for( int pass =0;pass<2;pass++) {
-			System.out.println(" PASS number: "+pass);
-		
+
+
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
-			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit);
+
 			System.out.println("Compilation unit : "+iCompilUnit.getElementName());
-
-			AST ast = compilUnit.getAST();
-
+			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Visitor used
 
 			try {
 
 				ArrayList<IMarker> ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-				//System.out.println(" Length ooooooffff" +ml.size());
 
-				int counter=0;
+
 				int indice =0;
 
-				while(!ml.isEmpty() && indice< ml.size()) {
+				while(!ml.isEmpty()) {
 					System.out.println(" Total number of errors "+ml.size());
 
-					//counter++;
-					
 					IMarker amarker= ml.get(0);
 					ml.remove(0);
-				
-					System.out.println(" INDICE "+indice);
-					
+
+					//System.out.println(" INDICE "+indice);
+
 					System.out.println(" CURRENT ERROR "+amarker);
-					if(iCompilUnit.getElementName().equals("AbstractAttribution.java"))
-					{
-						System.out.println("NUMber of errors here  "+ml.size());
-						System.out.println(" CURRENT ERROR "+amarker);
-					}
-					//	ml.remove(indice);
+
+
 					ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
-					//System.out.println(" ERROR NODE   " +node);
-					Usage usage =null;
-					for(Change c : myChanges){
 
-						usage = UsesManager.classify(c, amarker, compilUnit);
-					if(usage.getPattern() ==null)
+					adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
+					anImport =ASTManager.findImportDeclaration(node);
+					if(anImport != null && anImport instanceof ImportDeclaration){
+						
+						//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
+						Resolutions.DeleteImport(compilUnit,node);
+						compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+					
+					}
+
+					if(adeclaration != null && (adeclaration instanceof FieldDeclaration || adeclaration instanceof VariableDeclarationStatement)){
+
+						//TODO here if you delete a field declaration, delete its variable usages locally
+						System.out.println(" FOUND DECLRATION   "+adeclaration);
+						Resolutions.deleteUsedVariables(compilUnit,adeclaration);
+
+
+						//compilUnit =jp.parse(iCompilUnit);//ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+
+						//	iCompilUnit=(ICompilationUnit) compilUnit.getJavaElement();
+
+						//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+						compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+						//System.out.println( "SOURCE CODE AFTER ITER ");
+						//System.out.println(iCompilUnit.getSource());
+						System.out.println(" NEW NUMBER OF ERRORS "+ml.size());
+
+
+					}
+					
+					ASTNode foundParameter = ASTManager.findParameterInMethodDeclaration(node);
+					//here we delete the parameters in method declarations
+					if(foundParameter != null && foundParameter instanceof SingleVariableDeclaration){
+						//((MethodDeclaration)foundParameter.getParent()).parameters().remove(foundParameter);
+						//TODO here if you delete a parameter, the call of this method shoud be treated above
+						//so far their statement are being deleted rather than just delete the parameter in the call of this method
+						//System.out.println("deleting of parameter in method declaration adn also its used varaible statements");
+					Resolutions.deleteParameter(compilUnit, foundParameter);
+					compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+					}
+
+					for ( IMarker mr : ml )
 					{
-						indice++;	
-					}
-					else {
-						if(pass==1) {
-						switch (usage.getPattern()) {
-						
-						case variableDeclarationRename:
-							
-							Resolutions.renaming(compilUnit, node,  (((RenameClass)c).getNewname()));
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-							break;
-						case inImportRename:
-							Resolutions.resolveImport(compilUnit, c, node, amarker, (((RenameClass)c).getNewname()));
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-							break;
-						case inImportDelete:
-							Resolutions.DeleteImport(compilUnit,c, node);
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-							break;
-						case VariableDeclarationDelete:
-							System.out.println(" CURRENT PASS:  "+pass);
-							System.out.println("ENtry Point  "+node+  "USAGE NODE "+usage.getNode());
-							Resolutions.deleteVariableDeclaration(compilUnit, c, node);
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-							break;
-						
-							
-						default:
-							
-							break;
-						
-							
-						}
-						}
-						else {
-							
-							switch (usage.getPattern()) {
-							
-							case variableDeclarationRename:
-								System.out.println("ENtry Point of variable declaration "+node+  "USAGE NODE "+usage.getNode());
-								Resolutions.renaming(compilUnit, node,  (((RenameClass)c).getNewname()));
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								break;
-							case inImportRename:
-								Resolutions.resolveImport(compilUnit, c, node, amarker, (((RenameClass)c).getNewname()));
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								break;
-							
-							case VariableUseDelete:
-								System.out.println(" CURRENT PASS:  "+pass);
-								System.out.println("ENtry Point of variable use  "+node);
-								Resolutions.deleteVariablAssignment(compilUnit, c, node);
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								break;
-							case parameterDelete:
-								//System.out.println("WELCOME TO PARAM DELETE");
-								Resolutions.deleteParameter(compilUnit, c, node);
-							//	compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								
-								
-							default:
-								
-								break;
-							
-								
-							}
-						}
-					}
-						
-					
-					
-					
-							
-					 
-
+						System.out.println(" ERROR AFTER iter  "+mr);
 					}
 
 
 
-					//	System.out.println(" HERE WE GET THE NEW ERROR LIST");
-					
-
-
-					
-				
-					 for ( IMarker mr : ml )
-					 {
-						 System.out.println(" ERROR AFTER iter  "+mr);
-					 }
-			
-
-		
 
 				}
 
@@ -421,7 +367,7 @@ public class SampleView extends ViewPart implements IHandler {
 		}
 
 		System.out.println(" HOW MANY ERRORS  "+cpterrors);
-		}
+
 		return null;
 	}
 
