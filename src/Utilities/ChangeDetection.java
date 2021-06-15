@@ -10,7 +10,7 @@ import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameProperty;
 public class ChangeDetection {
 	public static ArrayList<Change> initializeChangements()
 	{
-		//RenameClass renameClass = new RenameClass("Person","Contact","???"); 
+		RenameClass renameClass = new RenameClass("Person","Contact","???"); 
 		//RenameClass renameClass1 = new RenameClass("Loc","Address","???"); 
 		
 		 //RenameProperty renameProperty = new RenameProperty("getList","getSortedList","???");
@@ -20,9 +20,9 @@ public class ChangeDetection {
 		//RenameClass renameClass1 = new RenameClass("Import","Importtoto","org.eclipse.ocl.pivot"); 
 		//RenameClass renameClass2= new RenameClass("Annotation","Annotationtoto","org.eclipse.ocl.pivot"); 
 		
-		DeleteClass deleteClass =  new DeleteClass("Person");
+		DeleteClass deleteClass =  new DeleteClass("Addresses");
 		ArrayList<Change> changes = new ArrayList<Change>();
-//	  changes.add(renameClass);
+  changes.add(renameClass);
 	//  changes.add(renameClass1);
 	  
 	 //  changes.add(renameClass1);

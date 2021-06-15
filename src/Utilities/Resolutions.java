@@ -33,12 +33,28 @@ import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameProperty;
 
 public class Resolutions {
-	public static void renaming( CompilationUnit cu,ASTNode an, String newName)
+	public static void renaming( CompilationUnit cu,Usage usage, String newName)
 	{
 		//System.out.println("Renaming  "+an+"to "+newName);
-		ASTModificationManager.RenameSimpleName(cu, an, newName);
+		ASTNode an = usage.getNode();
+		switch(usage.getPattern())
+		{
+		case variableDeclarationRename:
+			System.out.println("Renaming var declar   "+an+"to "+newName);
+			ASTModificationManager.RenameSimpleName(cu, an, newName);
+			break;
+		case createObjectRename:
+			System.out.println("Renaming create method  "+an+"to "+newName);
+			ASTModificationManager.RenameSimpleName(cu, an, "create"+newName);
+			break;
+		default:
+			break;
+		
+		}
+		
 	}
-	public static void resolveImport(CompilationUnit cu,Change change,ASTNode an,IMarker amarker, String newName)
+	
+	public static void renameImport(CompilationUnit cu,Change change,Usage usage,IMarker amarker, String newName)
 	{
 		ASTNode errornode = ASTManager.getErrorNode(cu, amarker);
 
@@ -47,11 +63,14 @@ public class Resolutions {
 			ASTNode n= childrennodes.get(i);
 			if( n instanceof SimpleName)
 			{
+				
 				//System.out.println(" HERE IS AN IMPORT SIMPLE NAME "+ n);
 				if(((SimpleName)n).getIdentifier().equals(((RenameClass)change).getName()))
 				{
+				usage.setNode(n);
 					System.out.println("Renaming  "+n+"to "+(((RenameClass)change).getNewname()));
-					renaming(cu,n,(((RenameClass)change).getNewname()))	 ;
+					
+					ASTModificationManager.RenameSimpleName(cu, n, newName);
 				}
 			}
 		}
@@ -59,7 +78,7 @@ public class Resolutions {
 		//(((ImportDeclaration)an).getName());
 
 	}
-	public static void DeleteImport2(CompilationUnit cu, Change change,ASTNode node)
+	public static void deleteImport(CompilationUnit cu, Change change,ASTNode node)
 	{
 
 
@@ -102,7 +121,7 @@ public class Resolutions {
 
 	}
 
-	public static void DeleteImport(CompilationUnit cu,ASTNode node)
+	public static void DeleteImport3(CompilationUnit cu,ASTNode node)
 	{
 
 
@@ -373,7 +392,7 @@ public static void deleteInstanceClass(CompilationUnit cu, ASTNode foundInstance
 			TextEdit edits = rewriter1.rewriteAST(document, null);
 			if( edits!=null)
 			{
-				System.out.println(" FOUND Instance in saving part");
+				//System.out.println(" FOUND Instance in saving part");
 				SaveModification.SaveModif(cu, edits);
 			}
 		}
