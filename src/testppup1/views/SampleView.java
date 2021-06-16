@@ -304,106 +304,104 @@ public class SampleView extends ViewPart implements IHandler {
 					for(Change change :myChanges)
 					{
 						Usage usage = UsesManager.classify(change, amarker, compilUnit);
-						if( usage.getPattern()==null)
+						if( usage.getPattern()==null )
 						{
 							System.out.println(" Pattern null of node "+node);
 						}
 						else {
-						switch (usage.getPattern()) {
-						case variableDeclarationRename:
-							System.out.println(" Rename var declar");
-							Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-							break;
-						case createObjectRename:
-							Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							
-							break;
-						case getObjectRename:
-							break;
-						case setObjectRename:
-							break;
-						case inImportRename:
-							System.out.println(" Rename import");
-							Resolutions.renameImport(compilUnit, change, usage, amarker, (((RenameClass)change).getNewname()));
-							compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-							//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-							break;
-						case VariableDeclarationDelete:
-							System.out.println(" Delete var declar");
-							adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
-
-							if(adeclaration != null && (adeclaration instanceof FieldDeclaration || adeclaration instanceof VariableDeclarationStatement)){
-
-
-								System.out.println(" FOUND DECLRATION   "+adeclaration);
-								Resolutions.deleteUsedVariables(compilUnit,adeclaration);
-
-
-								//compilUnit =jp.parse(iCompilUnit);//ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-
-
-								//	iCompilUnit=(ICompilationUnit) compilUnit.getJavaElement();
-
+							switch (usage.getPattern()) {
+							case variableDeclarationRename:
+								System.out.println(" Rename var declar");
+								Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
+								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 								//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								break;
+							case createObjectRename:
+								Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
 								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 
-								//System.out.println( "SOURCE CODE AFTER ITER ");
-								//System.out.println(iCompilUnit.getSource());
-								System.out.println(" NEW NUMBER OF ERRORS "+ml.size());
-
-
-							}
-							break;
-						case VariableUseDelete:
-							System.out.println(" Delete var use");
-							break;
-						case parameterDelete:
-							System.out.println(" Delete parameter");
-							ASTNode foundParameter = ASTManager.findParameterInMethodDeclaration(node);
-
-							if(foundParameter != null && foundParameter instanceof SingleVariableDeclaration){
-
-								Resolutions.deleteParameter(compilUnit, foundParameter);
+								break;
+							case getObjectRename:
+								break;
+							case setObjectRename:
+								break;
+							case inImportRename:
+								System.out.println(" Rename import");
+								Resolutions.renameImport(compilUnit, change, usage, amarker, (((RenameClass)change).getNewname()));
 								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+								//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								break;
+							case VariableDeclarationDelete:
+								System.out.println(" Delete var declar");
+								adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
 
-							}
-							break;
-						case inImportDelete:
-							System.out.println(" Delete import");
-							anImport =ASTManager.findImportDeclaration(node);
-							if(anImport != null && anImport instanceof ImportDeclaration){
+								if(adeclaration != null && (adeclaration instanceof FieldDeclaration || adeclaration instanceof VariableDeclarationStatement)){
 
-								//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
-								Resolutions.deleteImport(compilUnit,change,node);
+
+									System.out.println(" FOUND DECLRATION   "+adeclaration);
+									Resolutions.deleteUsedVariables(compilUnit,adeclaration);
+
+
+									//compilUnit =jp.parse(iCompilUnit);//ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+
+									//	iCompilUnit=(ICompilationUnit) compilUnit.getJavaElement();
+
+									//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+									//System.out.println( "SOURCE CODE AFTER ITER ");
+									//System.out.println(iCompilUnit.getSource());
+									System.out.println(" NEW NUMBER OF ERRORS "+ml.size());
+
+
+								}
+								break;
+							case VariableUseDelete:
+								System.out.println(" Delete var use");
+								break;
+							case parameterDelete:
+								System.out.println(" Delete parameter");
+								ASTNode foundParameter = ASTManager.findParameterInMethodDeclaration(node);
+
+								if(foundParameter != null && foundParameter instanceof SingleVariableDeclaration){
+
+									Resolutions.deleteParameter(compilUnit, foundParameter);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+								}
+								break;
+							case inImportDelete:
+								System.out.println(" Delete import");
+								anImport =ASTManager.findImportDeclaration(node);
+								if(anImport != null && anImport instanceof ImportDeclaration){
+
+									//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
+									Resolutions.deleteImport(compilUnit,change,node);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+
+
+								}
+								break;
+							case ClassInstanceDelete:
+								ASTNode classInstance=ASTManager.findClassInstanceCreations(node);
+								if( classInstance !=null && classInstance instanceof ClassInstanceCreation) {
+								Resolutions.deleteInstanceClass(compilUnit, classInstance);
 								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+								}
 
+								break;
+							default:
+								System.out.println(" No pattern matches ");
+								break;
 
 							}
-							break;
-
-
-						default:
-							System.out.println(" No pattern matches ");
-							break;
-
 						}
 					}
-					}
 
 
 
-					ASTNode foundInstanceCreation = ASTManager.findClassInstanceCreations(node);
-					//here treat when we have new DeletedType() alone not in a variable declaration
-					if(foundInstanceCreation != null && foundInstanceCreation instanceof ClassInstanceCreation){
-						//System.out.println(" FOUND Instance");
-						Resolutions.deleteInstanceClass(compilUnit, foundInstanceCreation);
-						compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-
-					}
-
+				
 
 
 

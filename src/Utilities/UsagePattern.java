@@ -5,7 +5,7 @@ public enum UsagePattern {
 	getAttribute,setAttribute,getClass_Attribute,accessAttribute,
 	inImportRename,
 	callMethod,getClass_call,
-	VariableDeclarationDelete,VariableUseDelete,
+	VariableDeclarationDelete,VariableUseDelete,ClassInstanceDelete,
 	parameterDelete,
 	inImportDelete,
 	

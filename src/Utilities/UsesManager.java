@@ -218,14 +218,14 @@ public class UsesManager {
 
 				if(ASTManager.findVariableDeclarationFragment(errornode)!=null)
 				{
-					System.out.println(" your in fragment declar  "+errornode);
+					
 				}
 				if(((SimpleName)errornode).getIdentifier().equals(((DeleteClass)change).getName()))
 				{
 					
 					if(ASTManager.findParameterInMethodDeclaration(usage.getNode())!=null)
 					{
-						System.out.println("YOUR IN PARAMETER CASE");
+						
 						usage.setPattern(UsagePattern.parameterDelete);
 					}
 
@@ -236,8 +236,14 @@ public class UsesManager {
 
 					if(ASTManager.findFieldOrVariableDeclarations(errornode)!=null)
 					{
-						System.out.println("YOUR IN PARAMETER CASE");
+						
 						usage.setPattern(UsagePattern.VariableDeclarationDelete);
+					}
+
+					if(ASTManager.findClassInstanceCreations(errornode)!=null)
+					{
+						
+						usage.setPattern(UsagePattern.ClassInstanceDelete);
 					}
 
 				}
