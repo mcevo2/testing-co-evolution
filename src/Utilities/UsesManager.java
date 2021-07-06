@@ -13,6 +13,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.NameQualifiedType;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
@@ -28,7 +29,7 @@ import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameProperty;
 import fr.lip6.meta.ComplexChangeDetection.ComplexChanges.MoveProperty;
 import fr.lip6.meta.ComplexChangeDetection.ComplexChanges.PushProperty;
-import 	org.eclipse.jdt.astview.views.ASTViewContentProvider;
+
 
 
 public class UsesManager {
@@ -156,11 +157,11 @@ public class UsesManager {
 					usage.setPattern(UsagePattern.getObjectRename);
 				}
 				if( ASTManager.findMethodInvocation(errornode)!=null) {
-				if(((SimpleName)errornode).getIdentifier().equals("create"+((RenameClass)change).getName()))
-				{
-					System.out.println(" in CREATE OBJ "+errornode);
-					usage.setPattern(UsagePattern.createObjectRename);
-				}
+					if(((SimpleName)errornode).getIdentifier().equals("create"+((RenameClass)change).getName()))
+					{
+						System.out.println(" in CREATE OBJ "+errornode);
+						usage.setPattern(UsagePattern.createObjectRename);
+					}
 				}
 				/*	if(((SimpleName)error).getIdentifier().contains("("+((RenameClass)change).getName()+")"))
 			{
@@ -199,54 +200,74 @@ public class UsesManager {
 			}
 			if(change instanceof DeleteClass)
 			{
+				if(ASTManager.isReturnType(errornode))
+				{
+					System.out.println(" In return type usage ");
+					usage.setPattern(UsagePattern.ReturnTypeDelete);
+				}
 				if(ASTManager.findAssignment(errornode)!=null)
 				{
 
 
 					//System.out.println("LEFT HAND SIDE "+((Assignment)ASTManager.findAssignment(errornode)).getLeftHandSide());
 
-				//	System.out.println("LEFT HAND SIDE BINNDING  "+((SimpleName)errornode).resolveTypeBinding().getName());
+					//	System.out.println("LEFT HAND SIDE BINNDING  "+((SimpleName)errornode).resolveTypeBinding().getName());
 					/*if(((SimpleName)errornode).resolveTypeBinding().getName().equals(((DeleteClass)change).getName()))
 					{
 						usage.setPriority(1);
 						usage.setTreated(false);
 						usage.setPattern(UsagePattern.VariableUseDelete);
 					}
-					*/
+					 */
 
 				}
 
 				if(ASTManager.findVariableDeclarationFragment(errornode)!=null)
 				{
-					
+
 				}
 				if(((SimpleName)errornode).getIdentifier().equals(((DeleteClass)change).getName()))
 				{
-					
+
 					if(ASTManager.findParameterInMethodDeclaration(usage.getNode())!=null)
 					{
-						
+
 						usage.setPattern(UsagePattern.parameterDelete);
 					}
 
 				}
+				
+				if(ASTManager.isSuperClass(errornode,((DeleteClass) change).getName()))
+				{
+					usage.setPattern(UsagePattern.SuperClassDelete); 
+				}
 				if(((SimpleName)errornode).getIdentifier().equals(((DeleteClass)change).getName()))
 				{
-					
+
 
 					if(ASTManager.findFieldOrVariableDeclarations(errornode)!=null)
 					{
-						
+
 						usage.setPattern(UsagePattern.VariableDeclarationDelete);
 					}
 
 					if(ASTManager.findClassInstanceCreations(errornode)!=null)
 					{
-						
+
 						usage.setPattern(UsagePattern.ClassInstanceDelete);
 					}
 
 				}
+				if(ASTManager.isLiteral(errornode))
+				{
+					usage.setPattern(UsagePattern.LiteralDelete);
+				}
+				ASTNode complexStatement=ASTManager.findIfWhileForStatement(errornode);
+				if(complexStatement !=null)
+				{
+					usage.setPattern(UsagePattern.ComplexStatementDelete);
+				}
+
 
 			}
 		}
@@ -255,32 +276,77 @@ public class UsesManager {
 			if(ASTManager.checkImportDeclaration(errornode)  )
 			{
 				List<ASTNode > childrennodes=ASTManager.getChildren(errornode);
-				
-					
-					for (int i = 0; i < childrennodes.size(); i++) {
-						ASTNode n= childrennodes.get(i);
-						if( n instanceof SimpleName)
+
+
+				for (int i = 0; i < childrennodes.size(); i++) {
+					ASTNode n= childrennodes.get(i);
+					if( n instanceof SimpleName)
+					{
+
+
+						if( change instanceof RenameClass && ((SimpleName)n).getIdentifier().equals(((RenameClass)change).getName()) )
 						{
+							usage.setPattern(UsagePattern.inImportRename);
+							//System.out.println(" and its child is "+errornode.)
+						}
+						else if( change instanceof DeleteClass && ((SimpleName)n).getIdentifier().equals(((DeleteClass)change).getName()) )
+						{
+							
+
+								
+									usage.setPattern(UsagePattern.inImportDelete);
+									
 						
 
-				if( change instanceof RenameClass && ((SimpleName)n).getIdentifier().equals(((RenameClass)change).getName()) )
-				{
-					usage.setPattern(UsagePattern.inImportRename);
-					//System.out.println(" and its child is "+errornode.)
-				}
-				else if( change instanceof DeleteClass && ((SimpleName)n).getIdentifier().equals(((DeleteClass)change).getName()) )
-				{
-					usage.setPattern(UsagePattern.inImportDelete);
-				}
-						}
+							
+						} 
 					}
+				}
 
 			}
+			
+		}
+		else  if (errornode instanceof NameQualifiedType) {
+			if ( ASTManager.findParameterInMethodDeclaration(errornode)!=null)
+			{
+				
+				List<ASTNode > childrennodes=ASTManager.getChildren(errornode);
+
+
+				for (int i = 0; i < childrennodes.size(); i++) {
+				
+					ASTNode n= childrennodes.get(i);
+					if( n instanceof SimpleName  )
+						
+					{
+						String id =((SimpleName)n).getIdentifier();
+						
+						if(change instanceof DeleteClass && ((SimpleName)n).getIdentifier().equals(((DeleteClass)change).getName()) )
+						{
+							ASTNode parentnode =(ASTManager.findParameterInMethodDeclaration(errornode)).getParent() ;
+							if( parentnode instanceof MethodDeclaration &&  ((MethodDeclaration)parentnode).resolveBinding().getName().equals("visit"+id) )
+							{
+								usage.setPattern(UsagePattern.VisitClassMethodDelete);
+								System.out.println(" QNT PARAM 1111 ");
+							}
+							else if( parentnode instanceof MethodDeclaration &&  ((MethodDeclaration)parentnode).resolveBinding().getName().equals("get"+id) )
+							{
+								usage.setPattern(UsagePattern.GetClassMethodDelete);
+								System.out.println(" QNT PARAM 22222 ");
+							} 
+						
+						}
+					}
+				
+			}
+			
+			
+		}
 		}
 		return usage;
 
 	}
-	
+
 	public static  ArrayList<Usage> getUsages(Change change, ArrayList<IMarker> errors,CompilationUnit cu)
 	{
 		ArrayList<Usage> usages= new ArrayList<Usage>();

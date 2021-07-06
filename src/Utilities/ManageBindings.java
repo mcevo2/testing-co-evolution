@@ -31,7 +31,7 @@ public class ManageBindings {
 	public void setBindingsNodes(Map<IBinding, ArrayList<ASTNode>> bindingsNodes) {
 		this.bindingsNodes = bindingsNodes;
 	}
-	
+	 
 	
 	
 }

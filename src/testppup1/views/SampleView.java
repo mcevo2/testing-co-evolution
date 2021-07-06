@@ -17,6 +17,7 @@ import Utilities.UsagePattern;
 import Utilities.UsesManager;
 import Utilities.UtilProjectParser;
 import fr.lip6.meta.ComplexChangeDetection.Change;
+import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.DeleteClass;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameClass;
 import fr.lip6.meta.ComplexChangeDetection.AtomicChanges.RenameProperty;
 
@@ -282,149 +283,191 @@ public class SampleView extends ViewPart implements IHandler {
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 
 			System.out.println("Compilation unit : "+iCompilUnit.getElementName());
-			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Visitor used
+			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Visitor not used
 
+			ArrayList<IMarker> ml;
 			try {
+				ml = ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 
-				ArrayList<IMarker> ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+				if(ml.size() >0 ) {
+					JavaVisitor jVisitor = new JavaVisitor();
+					jVisitor.process(compilUnit);
+					/*	if(iCompilUnit.getElementName().equals("OCLstdlib.java")) {
+						JavaParser.printManageBindings();
+					}
+					 */
+					while(!ml.isEmpty() ) {
+						System.out.println(" Total number of errors "+ml.size());
 
-				while(!ml.isEmpty()) {
-					System.out.println(" Total number of errors "+ml.size());
+						IMarker amarker= ml.get(0);
+						
+						ml.remove(0);
 
-					IMarker amarker= ml.get(0);
-					ml.remove(0);
+						//System.out.println(" INDICE "+indice);
 
-					//System.out.println(" INDICE "+indice);
-
-					System.out.println(" CURRENT ERROR "+amarker);
+						System.out.println(" CURRENT ERROR "+amarker );
 
 
-					ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
+						ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
+						//System.out.println(" TYPE of NODE "+node.getNodeType());
 
-					for(Change change :myChanges)
-					{
-						Usage usage = UsesManager.classify(change, amarker, compilUnit);
-						if( usage.getPattern()==null )
+						for(Change change :myChanges)
 						{
-							System.out.println(" Pattern null of node "+node);
-						}
-						else {
-							switch (usage.getPattern()) {
-							case variableDeclarationRename:
-								System.out.println(" Rename var declar");
-								Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								break;
-							case createObjectRename:
-								Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+							//System.out.println(" HERE IS CHANGEEEEE");
+							Usage usage = UsesManager.classify(change, amarker, compilUnit);
+							if( usage.getPattern()==null )
+							{
 
-								break;
-							case getObjectRename:
-								break;
-							case setObjectRename:
-								break;
-							case inImportRename:
-								System.out.println(" Rename import");
-								Resolutions.renameImport(compilUnit, change, usage, amarker, (((RenameClass)change).getNewname()));
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								break;
-							case VariableDeclarationDelete:
-								System.out.println(" Delete var declar");
-								adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
-
-								if(adeclaration != null && (adeclaration instanceof FieldDeclaration || adeclaration instanceof VariableDeclarationStatement)){
+								System.out.println(" Pattern null of node "+node);
 
 
-									System.out.println(" FOUND DECLRATION   "+adeclaration);
-									Resolutions.deleteUsedVariables(compilUnit,adeclaration);
-
-
-									//compilUnit =jp.parse(iCompilUnit);//ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-
-
-									//	iCompilUnit=(ICompilationUnit) compilUnit.getJavaElement();
-
-									//	ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-
-									//System.out.println( "SOURCE CODE AFTER ITER ");
-									//System.out.println(iCompilUnit.getSource());
-									System.out.println(" NEW NUMBER OF ERRORS "+ml.size());
-
-
-								}
-								break;
-							case VariableUseDelete:
-								System.out.println(" Delete var use");
-								break;
-							case parameterDelete:
-								System.out.println(" Delete parameter");
-								ASTNode foundParameter = ASTManager.findParameterInMethodDeclaration(node);
-
-								if(foundParameter != null && foundParameter instanceof SingleVariableDeclaration){
-
-									Resolutions.deleteParameter(compilUnit, foundParameter);
-									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-
-								}
-								break;
-							case inImportDelete:
-								System.out.println(" Delete import");
-								anImport =ASTManager.findImportDeclaration(node);
-								if(anImport != null && anImport instanceof ImportDeclaration){
-
-									//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
-									Resolutions.deleteImport(compilUnit,change,node);
+							}
+							else {
+								switch (usage.getPattern()) {
+								case variableDeclarationRename:
+									//System.out.println(" Rename var declar");
+									Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 
 
-								}
-								break;
-							case ClassInstanceDelete:
-								ASTNode classInstance=ASTManager.findClassInstanceCreations(node);
-								if( classInstance !=null && classInstance instanceof ClassInstanceCreation) {
-								Resolutions.deleteInstanceClass(compilUnit, classInstance);
-								compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
-								}
+									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									break;
+								case createObjectRename:
+									Resolutions.renaming(compilUnit, usage,  (((RenameClass)change).getNewname()));
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 
-								break;
-							default:
-								System.out.println(" No pattern matches ");
-								break;
+									break;
+								case getObjectRename:
+									break;
+								case setObjectRename:
+									break;
+								case inImportRename:
+									System.out.println(" Rename import");
+									Resolutions.renameImport(compilUnit, change, usage, amarker, (((RenameClass)change).getNewname()));
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 
+									break;
+								case VariableDeclarationDelete:
+									System.out.println(" Delete var declar");
+									adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
+									if (((DeleteClass)change).getName().equals(((SimpleName)node).getIdentifier()))
+									{
+										if(adeclaration != null && (adeclaration instanceof FieldDeclaration || adeclaration instanceof VariableDeclarationStatement)){
+
+
+
+											System.out.println(" FOUND DECLRATION   "+adeclaration);
+											Resolutions.deleteUsedVariables(compilUnit,adeclaration);
+
+
+											compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+											jVisitor.process(compilUnit);
+											//System.out.println( "SOURCE CODE AFTER ITER ");
+											System.out.println(iCompilUnit.getSource());
+											ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+
+
+
+
+										}
+									}
+									break;
+								case VariableUseDelete:
+									System.out.println(" Delete var use");
+									break;
+								case parameterDelete:
+
+									ASTNode foundParameter = ASTManager.findParameterInMethodDeclaration(node);
+									Resolutions.deleteParameter(compilUnit,foundParameter);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									jVisitor.process(compilUnit);
+									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+
+
+
+									break;
+								case inImportDelete:
+									System.out.println(" Delete import");
+									anImport =ASTManager.findImportDeclaration(node);
+									if(anImport != null && anImport instanceof ImportDeclaration){
+
+										//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
+										Resolutions.deleteImport(compilUnit,change,node);
+										compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+										jVisitor.process(compilUnit);
+										ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+
+
+									}
+									break;
+								case ClassInstanceDelete:
+									ASTNode classInstance=ASTManager.findClassInstanceCreations(node);
+									if (((DeleteClass)change).getName().equals(((SimpleName)node).getIdentifier()))
+									{
+										if( classInstance !=null && classInstance instanceof ClassInstanceCreation) {
+											Resolutions.deleteInstanceClass(compilUnit, classInstance);
+											compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+											jVisitor.process(compilUnit);
+											ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+
+										}
+									}
+
+									break;
+								case ReturnTypeDelete:
+									Resolutions.deleteReturnType(compilUnit, change, node);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									jVisitor.process(compilUnit);
+									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+
+									break;
+								case SuperClassDelete:
+									System.out.println("  HERE IN SUPER CLASS CASE ");
+									Resolutions.deleteSuperClass(compilUnit, change, node);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									jVisitor.process(compilUnit);
+									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									break;
+								case LiteralDelete:
+									Resolutions.deleteLiteral(compilUnit, change, node);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									jVisitor.process(compilUnit);
+									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									break;
+								case ComplexStatementDelete:
+									Resolutions.deleteCompextStatemnt(compilUnit, change, node);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									jVisitor.process(compilUnit);
+									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									break;
+								case VisitClassMethodDelete:
+									Resolutions.DeleteVisitClassMethod(compilUnit, change, node);
+									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
+									jVisitor.process(compilUnit);
+									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									break;
+								default:
+
+									System.out.println(" No pattern matches "+usage.getPattern());
+									break;
+
+								}
 							}
 						}
 					}
 
 
-
-				
-
-
-
-					for ( IMarker mr : ml )
-					{
-						System.out.println(" ERROR AFTER iter  "+mr);
-					}
-
-
-
-
 				}
-
-
-			} 
-			catch (CoreException e) {
+			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 		}
 
-		System.out.println(" HOW MANY ERRORS  "+cpterrors);
+		System.out.println(" END OF EXECUTION3");
 
 		return null;
 	}

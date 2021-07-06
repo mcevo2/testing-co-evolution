@@ -23,7 +23,7 @@ public class ErrorsRetriever {
 
 		 //System.out.println(" Compilation unit path : "+ cu.getPath());
 
-		 
+		  
 
 		      IResource javaSourceFile =  cu.getResource();//cu.getUnderlyingResource();
 		     // javaSourceFile.

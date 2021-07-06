@@ -39,7 +39,7 @@ public class JavaParser {
 		return newUnit;//TODO maybe store it if needed for future useage, like for the resolutions ;)
 	}
 	
-	
+	 
 	/*print the content of the ManageBindings map variable
 	 * */
 	public static void printManageBindings(){

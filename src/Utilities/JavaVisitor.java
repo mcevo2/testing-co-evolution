@@ -1,6 +1,7 @@
 package Utilities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.dom.AST;
@@ -106,7 +107,8 @@ import org.eclipse.jdt.core.dom.WildcardType;
 //import net.sourceforge.earticleast.app.LocalVariableDetector;
 
 public class JavaVisitor extends ASTVisitor {//abstract?
-
+	
+	 List<ReturnStatement> returnStatments = new ArrayList<ReturnStatement>();
 	//TODO, if you want to revisit during reolution, then put the initialisation here only and not in the constructors, and reintitialaisze it elewhere if you want to reexecute
 	private static ManageBindings manageBindings = new ManageBindings();
 
@@ -139,7 +141,9 @@ public class JavaVisitor extends ASTVisitor {//abstract?
 		unit.accept(this);
 		
 	}
-	
+	 public List<ReturnStatement> getReturnStatments() {
+	      return returnStatments;
+	    }
 	public void preVisit(ASTNode node) {
 		//TODO System.out.println("class type >> "+node.getClass());
 		
@@ -149,6 +153,7 @@ public class JavaVisitor extends ASTVisitor {//abstract?
 //			System.out.println("			Oamar statement  class id >>" + node.getClass() + " | parent " + node.getParent().getClass());
 //		}
 	}
+
 	
 	public boolean visit(AnnotationTypeDeclaration node) {
 		return true;
@@ -409,6 +414,8 @@ public class JavaVisitor extends ASTVisitor {//abstract?
 	}
 	
 	public boolean visit(ReturnStatement node) {
+		
+		this.returnStatments.add(node);
 		return true;
 	}
 	
@@ -428,7 +435,7 @@ public class JavaVisitor extends ASTVisitor {//abstract?
 	public boolean visit(SimpleName node) {//TODO if the binding treatment is needed elsewhere, then extract it in a new method
 		
 		//System.out.println("SimpleName  class id >>" + node.getIdentifier());
-		//System.out.println("SimpleName  class name >>" + node.getFullyQualifiedName());
+	//System.out.println("SimpleName  class name >>" + node.getFullyQualifiedName());
 		
 		IBinding binding = node.resolveBinding();
 		
@@ -439,11 +446,13 @@ public class JavaVisitor extends ASTVisitor {//abstract?
 				/* here get the content object (which is a list of ASTNode) and add this node to it
 				 * */
 				manageBindings.getBindingsNodes().get(binding).add(node);
+			System.out.println(" in  exist "+node.getIdentifier());
 				
 			} else {
 				ArrayList<ASTNode> nodes = new ArrayList<ASTNode>();
 				nodes.add(node);
 				manageBindings.getBindingsNodes().put(binding, nodes);
+				System.out.println(" in  in new addes: "+node.getIdentifier());
 			}
 		}
 		

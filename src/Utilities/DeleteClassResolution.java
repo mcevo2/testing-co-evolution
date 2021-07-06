@@ -188,7 +188,7 @@ public class DeleteClassResolution {
 		
 		while(it != null && it.hasNext()){
 			
-			Object obj = it.next();
+			Object obj = it.next(); 
 			//System.out.println("frgament "+obj);
 			//System.out.println("frgament class "+obj.getClass());
 			/*here what I should do is 

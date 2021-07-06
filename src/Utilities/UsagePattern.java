@@ -8,6 +8,12 @@ public enum UsagePattern {
 	VariableDeclarationDelete,VariableUseDelete,ClassInstanceDelete,
 	parameterDelete,
 	inImportDelete,
+	ReturnTypeDelete,
+	SuperClassDelete, 
+	LiteralDelete,
+	ComplexStatementDelete,
+	VisitClassMethodDelete,
+	GetClassMethodDelete,
 	
 
 }
