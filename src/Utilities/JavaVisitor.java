@@ -446,13 +446,13 @@ public class JavaVisitor extends ASTVisitor {//abstract?
 				/* here get the content object (which is a list of ASTNode) and add this node to it
 				 * */
 				manageBindings.getBindingsNodes().get(binding).add(node);
-			System.out.println(" in  exist "+node.getIdentifier());
+		//	System.out.println(" in  exist "+node.getIdentifier());
 				
 			} else {
 				ArrayList<ASTNode> nodes = new ArrayList<ASTNode>();
 				nodes.add(node);
 				manageBindings.getBindingsNodes().put(binding, nodes);
-				System.out.println(" in  in new addes: "+node.getIdentifier());
+				//System.out.println(" in  in new addes: "+node.getIdentifier());
 			}
 		}
 		

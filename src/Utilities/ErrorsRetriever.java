@@ -28,7 +28,7 @@ public class ErrorsRetriever {
 		      IResource javaSourceFile =  cu.getResource();//cu.getUnderlyingResource();
 		     // javaSourceFile.
 		  
-		   
+		    //  javaSourceFile.f
 		      IMarker[] markers = 
 
 		         javaSourceFile.findMarkers(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER,

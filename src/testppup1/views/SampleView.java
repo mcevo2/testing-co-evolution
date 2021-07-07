@@ -285,7 +285,9 @@ public class SampleView extends ViewPart implements IHandler {
 			System.out.println("Compilation unit : "+iCompilUnit.getElementName());
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Visitor not used
 
-			ArrayList<IMarker> ml;
+			ArrayList<IMarker> ml= new ArrayList<IMarker>();
+			
+			ArrayList<IMarker> ml2= new ArrayList<IMarker>();
 			try {
 				ml = ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 
@@ -301,7 +303,7 @@ public class SampleView extends ViewPart implements IHandler {
 
 						IMarker amarker= ml.get(0);
 						
-						ml.remove(0);
+						//ml.remove(0);
 
 						//System.out.println(" INDICE "+indice);
 
@@ -365,10 +367,14 @@ public class SampleView extends ViewPart implements IHandler {
 
 											compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 											jVisitor.process(compilUnit);
+											Thread.sleep(3000);
 											//System.out.println( "SOURCE CODE AFTER ITER ");
-											System.out.println(iCompilUnit.getSource());
-											ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-
+											//System.out.println(iCompilUnit.getSource());
+										//	ml = (ArrayList<IMarker>)((ErrorsRetriever.findJavaProblemMarkers(iCompilUnit)).clone());
+											ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
+											//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+											 ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+											System.out.println(" number of errors after updating ml "+ ml2.size());
 
 
 
@@ -384,8 +390,9 @@ public class SampleView extends ViewPart implements IHandler {
 									Resolutions.deleteParameter(compilUnit,foundParameter);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
-									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-
+									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
+									
 
 
 									break;
@@ -398,7 +405,12 @@ public class SampleView extends ViewPart implements IHandler {
 										Resolutions.deleteImport(compilUnit,change,node);
 										compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 										jVisitor.process(compilUnit);
-										ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+										Thread.sleep(3000);
+										//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+										ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
+										
+										// ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+										//System.out.println(" number of errors after updating ml "+ ml2.size());
 
 
 									}
@@ -411,8 +423,10 @@ public class SampleView extends ViewPart implements IHandler {
 											Resolutions.deleteInstanceClass(compilUnit, classInstance);
 											compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 											jVisitor.process(compilUnit);
-											ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-
+											Thread.sleep(3000);
+											//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+											ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
+											
 										}
 									}
 
@@ -421,7 +435,13 @@ public class SampleView extends ViewPart implements IHandler {
 									Resolutions.deleteReturnType(compilUnit, change, node);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
-									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									Thread.sleep(3000);
+									ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
+									
+								//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+									// ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+								//	System.out.println(" number of errors after updating ml "+ ml2.size());
+
 
 									break;
 								case SuperClassDelete:
@@ -429,24 +449,28 @@ public class SampleView extends ViewPart implements IHandler {
 									Resolutions.deleteSuperClass(compilUnit, change, node);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
+									Thread.sleep(3000);
 									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 									break;
 								case LiteralDelete:
 									Resolutions.deleteLiteral(compilUnit, change, node);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
+									Thread.sleep(3000);
 									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 									break;
 								case ComplexStatementDelete:
 									Resolutions.deleteCompextStatemnt(compilUnit, change, node);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
+									Thread.sleep(3000);
 									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 									break;
 								case VisitClassMethodDelete:
 									Resolutions.DeleteVisitClassMethod(compilUnit, change, node);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
+									Thread.sleep(3000);
 									ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 									break;
 								default:
@@ -462,6 +486,9 @@ public class SampleView extends ViewPart implements IHandler {
 
 				}
 			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
