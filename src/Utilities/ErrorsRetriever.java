@@ -11,6 +11,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaModelMarker;
+import org.eclipse.jdt.core.compiler.IProblem;
 
 public class ErrorsRetriever {
 	
@@ -54,6 +55,22 @@ public class ErrorsRetriever {
 
 
 		   }
-	
+	public static IProblem getEquivalentProblem(IProblem[] problems, IMarker marker)
+	{
+		
+		int start =marker.getAttribute(IMarker.CHAR_START, 0);
+		int end =marker.getAttribute(IMarker.CHAR_END, 0)-1;
+		int line=marker.getAttribute(IMarker.LINE_NUMBER, 0);
+
+
+
+		for(IProblem problem : problems) {
+			   if(problem.getSourceStart()== start && problem.getSourceEnd()==end && problem.getSourceLineNumber()==line)
+			   {
+				  return problem;			   }
+		}
+		
+		return null;
+	}
 
 }

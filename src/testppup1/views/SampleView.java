@@ -42,6 +42,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.core.compiler.IProblem;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
@@ -55,6 +56,9 @@ import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
+import org.eclipse.jdt.internal.ui.text.correction.AssistContext;
+import org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor;
+import org.eclipse.jdt.internal.ui.text.correction.ProblemLocation;
 import org.eclipse.jface.action.*;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.*;
@@ -73,6 +77,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.jdt.ui.text.java.IInvocationContext;
+import org.eclipse.jdt.ui.text.java.IJavaCompletionProposal;
+import org.eclipse.jdt.ui.text.java.IProblemLocation;
 
 
 /**
@@ -279,14 +286,19 @@ public class SampleView extends ViewPart implements IHandler {
 		JavaParser jp = new JavaParser();
 		int cpterrors=0;
 
-
+		IProblem iProblem=null;
 		for(ICompilationUnit iCompilUnit : ListICompilUnit){
 
 			System.out.println("Compilation unit : "+iCompilUnit.getElementName());
 			CompilationUnit compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Visitor not used
-
+			System.out.println("++++++++++++++++++++++");
+			IProblem[] problems = compilUnit.getProblems();
+			for(IProblem problem : problems) {
+				System.out.println("problem: " + problem.getSourceStart()+ "   "+problem.getSourceEnd()+" "+ problem.getSourceLineNumber());
+			}
+			System.out.println("++++++++++++++++++++++");
 			ArrayList<IMarker> ml= new ArrayList<IMarker>();
-			
+
 			ArrayList<IMarker> ml2= new ArrayList<IMarker>();
 			try {
 				ml = ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
@@ -299,15 +311,17 @@ public class SampleView extends ViewPart implements IHandler {
 					}
 					 */
 					while(!ml.isEmpty() ) {
+
 						System.out.println(" Total number of errors "+ml.size());
 
 						IMarker amarker= ml.get(0);
-						
+						System.out.println("++++++++++++++++++++++");
+
 						//ml.remove(0);
 
 						//System.out.println(" INDICE "+indice);
 
-						System.out.println(" CURRENT ERROR "+amarker );
+						System.out.println(" CURRENT ERROR "+amarker + " ID  "+amarker.getId()+ "source id  "+amarker.SOURCE_ID);
 
 
 						ASTNode node=	ASTManager.getErrorNode(compilUnit, amarker);
@@ -354,6 +368,10 @@ public class SampleView extends ViewPart implements IHandler {
 									break;
 								case VariableDeclarationDelete:
 									System.out.println(" Delete var declar");
+									problems = compilUnit.getProblems();
+									 iProblem= ErrorsRetriever.getEquivalentProblem(problems, amarker);
+									System.out.println("problem: " + iProblem.getSourceStart()+ "   "+iProblem.getSourceEnd()+" "+ iProblem.getSourceLineNumber());
+
 									adeclaration= ASTManager.findFieldOrVariableDeclarations(node);
 									if (((DeleteClass)change).getName().equals(((SimpleName)node).getIdentifier()))
 									{
@@ -370,10 +388,10 @@ public class SampleView extends ViewPart implements IHandler {
 											Thread.sleep(3000);
 											//System.out.println( "SOURCE CODE AFTER ITER ");
 											//System.out.println(iCompilUnit.getSource());
-										//	ml = (ArrayList<IMarker>)((ErrorsRetriever.findJavaProblemMarkers(iCompilUnit)).clone());
+											//	ml = (ArrayList<IMarker>)((ErrorsRetriever.findJavaProblemMarkers(iCompilUnit)).clone());
 											ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
 											//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-											 ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+											ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 											System.out.println(" number of errors after updating ml "+ ml2.size());
 
 
@@ -392,7 +410,7 @@ public class SampleView extends ViewPart implements IHandler {
 									jVisitor.process(compilUnit);
 									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 									ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
-									
+
 
 
 									break;
@@ -400,7 +418,26 @@ public class SampleView extends ViewPart implements IHandler {
 									System.out.println(" Delete import");
 									anImport =ASTManager.findImportDeclaration(node);
 									if(anImport != null && anImport instanceof ImportDeclaration){
+										int offset = amarker.getAttribute(IMarker.CHAR_START, 0);
 
+										int end = amarker.getAttribute(IMarker.CHAR_END, 0);
+
+
+										int length = end + 1 - offset;
+										IInvocationContext context = new AssistContext(iCompilUnit , offset, length);
+										ArrayList<IJavaCompletionProposal> proposals = new ArrayList<IJavaCompletionProposal>();
+										problems = compilUnit.getProblems();
+										 iProblem= ErrorsRetriever.getEquivalentProblem(problems, amarker);
+										System.out.println("problem: " + iProblem.getSourceStart()+ "   "+iProblem.getSourceEnd()+" "+ iProblem.getSourceLineNumber());
+		
+										ProblemLocation problem = new ProblemLocation(iProblem);
+										JavaCorrectionProcessor.collectCorrections(context, new IProblemLocation[] { problem }, proposals);        
+for ( IJavaCompletionProposal ijp : proposals)
+{
+	System.out.println(" PROPOSAL "+ijp.getDisplayString());
+	
+	
+}
 										//System.out.println("deleting of import "+foundImport.getName().getFullyQualifiedName());			
 										Resolutions.deleteImport(compilUnit,change,node);
 										compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
@@ -408,7 +445,7 @@ public class SampleView extends ViewPart implements IHandler {
 										Thread.sleep(3000);
 										//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 										ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
-										
+
 										// ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 										//System.out.println(" number of errors after updating ml "+ ml2.size());
 
@@ -426,21 +463,25 @@ public class SampleView extends ViewPart implements IHandler {
 											Thread.sleep(3000);
 											//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 											ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
-											
+
 										}
 									}
 
 									break;
 								case ReturnTypeDelete:
+									problems = compilUnit.getProblems();
+								 iProblem= ErrorsRetriever.getEquivalentProblem(problems, amarker);
+									System.out.println("problem: " + iProblem.getSourceStart()+ "   "+iProblem.getSourceEnd()+" "+ iProblem.getSourceLineNumber());
+
 									Resolutions.deleteReturnType(compilUnit, change, node);
 									compilUnit =ASTManager.getCompilationUnit(iCompilUnit); // Refresh the compilation unit
 									jVisitor.process(compilUnit);
 									Thread.sleep(3000);
 									ml = new ArrayList<IMarker>(ErrorsRetriever.findJavaProblemMarkers(iCompilUnit));
-									
-								//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
+
+									//ml =ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
 									// ml2=ErrorsRetriever.findJavaProblemMarkers(iCompilUnit);
-								//	System.out.println(" number of errors after updating ml "+ ml2.size());
+									//	System.out.println(" number of errors after updating ml "+ ml2.size());
 
 
 									break;
@@ -521,23 +562,5 @@ public class SampleView extends ViewPart implements IHandler {
 		// TODO Auto-generated method stub
 
 	}
-	public int[] findCaracter(String node, String strFind)
-	{
 
-		int count = 0, fromIndex = 0;
-		int[] pos= null;
-
-		while ((fromIndex = node.indexOf(strFind, fromIndex)) != -1 ){
-
-			System.out.println("Found at index: " + fromIndex);
-			pos[count]=fromIndex;
-			count++;
-
-			fromIndex++;
-
-		}
-		return pos;
-
-
-	}
 }
