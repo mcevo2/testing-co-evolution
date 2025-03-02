@@ -4,7 +4,7 @@ public class DeleteSuperType extends AtomicChange{
 
 	private String nameTarget = "";
 
-	private String getNameTarget() {
+	public String getNameTarget() {
 		return nameTarget;
 	}
 

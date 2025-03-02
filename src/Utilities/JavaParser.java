@@ -53,7 +53,7 @@ public class JavaParser {
 //			System.out.println("key_parent type "+i+" >> "+key.getJavaElement().getParent().getElementName());
 //			System.out.println("key_parent_khelladi "+i+" >> "+key.getJavaElement().getParent().getClass());
 			
-			
+			if(key !=null) {
 			System.out.println("  key key>> "+key.getKey());
 			System.out.println("    key class >> "+key.getClass());
 			i++;
@@ -62,6 +62,7 @@ public class JavaParser {
 			for(ASTNode node : JavaVisitor.getManageBindings().getBindingsNodes().get(key)){
 				System.out.println("			node_"+pos+" >> "+node + " >> parent >> "+node.getParent());
 				pos++;
+			}
 			}
 		}
 	}

@@ -1,0 +1,1293 @@
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testFeatureMapChange
+Impacting change (indirectly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest.java  Impacted test method :getOriginalTargetObjects
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testFeatureMap
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMultipleLoads
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest.java  Impacted test method :testMatching
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testRenamingStructuralFeature
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testRemoveAllNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testAttributesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testReferencesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testSimpleTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testGenericTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :featureMapTest
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEcoreEMap
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEExceptionNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNode
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithIDAndRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateIDUsedWithPlainResource
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleCrossResourceAttachAndDetach
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest.java  Impacted test method :testMatching
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testFeatureMapChange
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testReferencesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest.java  Impacted test method :testAll
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEcoreEMap
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testGenericTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMultipleLoads
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testFeatureMap
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :featureMapTest
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testRemoveAllNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testAttributesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testSimpleTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEExceptionNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testRenamingStructuralFeature
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNode
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithIDAndRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateIDUsedWithPlainResource
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest_impacted.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest_impacted.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest_impacted.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testEnumeration
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest_impacted.java  Impacted test method :testMatching
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest.java  Impacted test method :testMatching
+Impacting change (indirectly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :oneFileTest
+Impacting change (indirectly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :oneFileTest
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testFeatureMapChange
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest_impacted.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest_impacted.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest_impacted.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest_impacted.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEExceptionNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :featureMapTest
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testFeatureMapChange
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest_impacted.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testESuperTypeNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest_impacted.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testEExceptionNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy_impacted.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest_impacted.java  Impacted test method :testCrossReferenceIterator_resolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest_impacted.java  Impacted test method :testCrossReferenceIterator_nonResolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest_impacted.java  Impacted test method :testCrossReferenceIterator_resolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest_impacted.java  Impacted test method :testCrossReferenceIterator_nonResolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest_impacted.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testFeatureMap
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest_impacted.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testRemoveAllNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMultipleLoads
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testMultipleLoads
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest_impacted.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest_impacted.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest_impacted.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest_impacted.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest_impacted.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testReferencesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest_impacted.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest_impacted.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest.java  Impacted test method :testAll
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest_impacted.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest_impacted.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest_impacted.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest_impacted.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest_impacted.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNode
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithIDAndRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateIDUsedWithPlainResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest_impacted.java  Impacted test method :testAll
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest_impacted.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testGenericTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEcoreEMap
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testAttribute
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest_impacted.java  Impacted test method :testGenericTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest_impacted.java  Impacted test method :testSimpleTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest_impacted.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testSimpleTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testAttributesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testEcoreEMap
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testRenamingStructuralFeature
+Impacting change (directly): Deleted class EParameter Tests class:  TestValidateAction.java  Impacted test method :testValidateMultipleSelections
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :getFeatureType
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :getSource
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (indirectly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :setValueV2
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest_impacted.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest_impacted.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest_impacted.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testAttribute
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testEnumeration
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest.java  Impacted test method :testMatching
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest_impacted.java  Impacted test method :testMatching
+Impacting change (indirectly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :getOriginalTargetObjects
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest_impacted.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testFeatureMapChange
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest_impacted.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testFeatureMapChange
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest_impacted.java  Impacted test method :testSimpleAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest_impacted.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest_impacted.java  Impacted test method :testSimpleCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest_impacted.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest_impacted.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest_impacted.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest_impacted.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest_impacted.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest_impacted.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest_impacted.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testReferencesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEcoreEMap
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest_impacted.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest_impacted.java  Impacted test method :testAll
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMultipleLoads
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest_impacted.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest_impacted.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest_impacted.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest_impacted.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest_impacted.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testFeatureMap
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest_impacted.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testRemoveAllNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest_impacted.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest.java  Impacted test method :testAll
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testSimpleTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testGenericTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest_impacted.java  Impacted test method :featureMapTest
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest_impacted.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest_impacted.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest_impacted.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest_impacted.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest_impacted.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest_impacted.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testRenamingStructuralFeature
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy_impacted.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :featureMapTest
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest_impacted.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEExceptionNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest_impacted.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest_impacted.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest_impacted.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNode
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithIDAndRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateIDUsedWithPlainResource
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest_impacted.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testAttributesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest_impacted.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest_impacted.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest_impacted.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest_impacted.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testSingleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testSingleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testMultipleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testMultipleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testNestedNode
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testNestedNodeWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testNestedNodeWithIDAndRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testNestedNodeWithRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testNestedDeepNodeWithIntermediateID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest_impacted.java  Impacted test method :testNestedDeepNodeWithIntermediateIDUsedWithPlainResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest_impacted.java  Impacted test method :testRenamingStructuralFeature
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToManyContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testOneToOneContainment
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testBiDirectional
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testMultipleResources
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescription
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testCopyChangeDescriptionAndObject
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming1
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testChangeDescriptionWhenResumming2
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testLoadChangeDescritpions
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testNoChange
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testAddAllToAnotherContainment
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreValidationTest.java  Impacted test method :testMatching
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testFeatureMap
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testAttributesAsFeatures
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testReferencesAsFeatures
+Impacting change (indirectly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :moveElementsTest
+Impacting change (indirectly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :moveElementsTest
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testRequiredField
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :defaultValueLiteralValidationTest
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testMultipleApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse3
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEvents
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithManyDisposedLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithLocator
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocators
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceLocatorTest.java  Impacted test method :testResourceSetEventsWithTwoLocatorsAndDispose
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testConstraint
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testIndirectCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testSetElement
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testRemoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testAddElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMoveElementAndApply
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterStressTest.java  Impacted test method :testConsistentCrossReferences
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testMergeRemoveNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoadZip
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testRemoveAllProxy
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testEDataType
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Dynamic_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_Static_ResourceSet
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testPluginURINotRelative
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testReferenceEcoreUsingNSURI
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach1
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testRemoveAllNotifications
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testObjectsToDetach2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testXMLResourceID
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testReference
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testMetaData
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testProxy
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testAddingDuplicates
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testSimpleTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testGenericTypeTypeReferencesDoNotLeak
+Impacting change (directly): Deleted class EParameter Tests class:  ValidationTest.java  Impacted test method :testValidation5
+Impacting change (directly): Deleted class EParameter Tests class:  DynamicCrossResourceContainmentProxy.java  Impacted test method :testDynamicGet
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testMultiValueAttributeChange
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :crossReferenceTest
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_RemoveChild
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceAttachmentTest.java  Impacted test method :testSimpleCrossResourceAttachAndDetach
+Impacting change (directly): Deleted class EParameter Tests class:  NotificationTest.java  Impacted test method :testNotify
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges3
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testESuperTypes
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEGenericSuperTypes1
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  FeatureMapTest.java  Impacted test method :testSaveAndLoad
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchResources2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testSwitchContainers
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReferenceAndResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveResource
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResumeSerializedRecording
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testUnsettableList
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEType
+Impacting change (directly): Deleted class EParameter Tests class:  ListTest.java  Impacted test method :testDynamicModel
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testAddingAlreadyAdaptedObjectToCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromCrossContainmentReference
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemovingStillAdaptedObjectFromResourceContents
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testProxyResolve
+Impacting change (directly): Deleted class EParameter Tests class:  EContentAdapterTest.java  Impacted test method :testRemoveContentAdapter
+Impacting change (directly): Deleted class EParameter Tests class:  PermissiveDynamicModelTest.java  Impacted test method :testAll
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResource
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveWithBinaryResourceAndLoadWithXMIResourceAndInternalBuffer2
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges2
+Impacting change (directly): Deleted class EParameter Tests class:  EqualityTest.java  Impacted test method :featureMapTest
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceSetURICache
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testAddRemoveObject
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResource
+Impacting change (directly): Deleted class EParameter Tests class:  MultivalueAttributeTest.java  Impacted test method :testSerialization
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeLastIndexOf
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_resolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  ECrossReferenceAdapterTest.java  Impacted test method :testCrossReferenceIterator_nonResolving_wrapper
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testBidirectionalReferenceOrder
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveGenericException
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache1
+Impacting change (directly): Deleted class EParameter Tests class:  BinaryResourceTest.java  Impacted test method :testSaveAndLoadNoCache2
+Impacting change (directly): Deleted class EParameter Tests class:  SpecialCasesTest.java  Impacted test method :testFeatureMapChange
+Impacting change (directly): Deleted class EParameter Tests class:  PersistenceTest.java  Impacted test method :testCrossResourceContainment_XMLResourceUUID
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testEException
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testResourceSetChanges1
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testESuperTypeNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceImplIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ContentTypeTest.java  Impacted test method :testAllCombinations
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopy
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApply
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testApplyAndReverse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testReuse
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeRecordTest.java  Impacted test method :testMultipleLoads
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testRemoveSuperType
+Impacting change (directly): Deleted class EParameter Tests class:  ChangeDescriptionTest.java  Impacted test method :testUnchangeableFeature
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testIsAncestor
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDelete
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testDeleteAll
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testSingleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRoot
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testMultipleRootWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNode
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithIDAndRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedNodeWithRootID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateID
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceURIFragmentsTest.java  Impacted test method :testNestedDeepNodeWithIntermediateIDUsedWithPlainResource
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testRenamingStructuralFeature
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testBoolean
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testByte
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testChar
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testDouble
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testFloat
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testInt
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testLong
+Impacting change (directly): Deleted class EParameter Tests class:  ModelNotificationTest.java  Impacted test method :testShort
+Impacting change (directly): Deleted class EParameter Tests class:  BadEcoreDiagnosticTest.java  Impacted test method :testDiagnostic
+Impacting change (directly): Deleted class EParameter Tests class:  KeyTest.java  Impacted test method :testModel
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testXMLResourceIDCacheWithContainment
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testGenericTypes
+Impacting change (directly): Deleted class EParameter Tests class:  IterativeEContentAdapterTest.java  Impacted test method :testRemoveOfDeeplyNestedEPackage
+Impacting change (directly): Deleted class EParameter Tests class:  GenericTypeBuilderTest.java  Impacted test method :testErasedTypes
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testFrozenModelChange
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testCircularProxy
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testDuplicateNameProxyResolution
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testResourceImplIntrinsicIDCache
+Impacting change (directly): Deleted class EParameter Tests class:  ResourceCacheMechanismTest.java  Impacted test method :testAllIDCaches
+Impacting change (directly): Deleted class EParameter Tests class:  SimpleModelTest.java  Impacted test method :testTrackingModificaiton
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEcoreEMap
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreTest.java  Impacted test method :testEExceptionNotificationCount
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedNPE
+Impacting change (directly): Deleted class EParameter Tests class:  DiagnosticianTest.java  Impacted test method :testExceptionHandlingRecordedAE
+Impacting change (directly): Deleted class EParameter Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testCopyUnsettableSetEmptyList
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testAttribute
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testReference
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testUnboundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithRawType
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithWildcard
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testBoundedGenericContainerWithSuper
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (indirectly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  ReificationTest.java  Impacted test method :testPackage
+Impacting change (directly): Move property  getFeatureType From  EClass  to EAttribute Tests class:  EClassGenericTypeCacheTest.java  Impacted test method :testEClassImplSuperTypeAdapter
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreValidationTest.java  Impacted test method :testEcoreValidator
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeRecordTest.java  Impacted test method :testAttribute
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :testCreateAnnotationOnInitialization
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  ChangeDescriptionTest.java  Impacted test method :testApplyAndReverse2
+Impacting change (directly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreUtilStaticMethodsTest.java  Impacted test method :testGetConstraints
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  EcoreTest.java  Impacted test method :compareDynamicEPackageWithGeneratedEPackage
+Impacting change (directly): Rename property value to valueV2 in EEnumLiteral Tests class:  SpecialCasesTest.java  Impacted test method :testEnumeration
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad
+Impacting change (indirectly): Pull property source from EAnnotation to EModelElement Tests class:  UnicodeEncodingTest.java  Impacted test method :doEMFSaveAndLoad

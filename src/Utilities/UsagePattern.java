@@ -1,19 +1,38 @@
 package Utilities;
 
 public enum UsagePattern {
-	variableDeclarationRename,createObjectRename,getObjectRename,setObjectRename,castObjectRename,
+	TypeUseRename,createObjectRename,getObjectRename,setObjectRename,QualifiedTypeRename,castObjectRename,
 	getAttribute,setAttribute,getClass_Attribute,accessAttribute,
-	inImportRename,
+	ImportRename,
+	PropertyRename,
+	getPropertyRename,
+	setPropertyRename,
+	isPropertyRename,
 	callMethod,getClass_call,
-	VariableDeclarationDelete,VariableUseDelete,ClassInstanceDelete,
+	VariableDeclarationDelete,VariableUseDelete,ClassInstanceDelete,MethodInvocTypeDelete,
 	parameterDelete,
-	inImportDelete,
+	parameterInMiDelete,
+	ImportDelete, 
 	ReturnTypeDelete,
 	SuperClassDelete, 
 	LiteralDelete,
 	ComplexStatementDelete,
 	VisitClassMethodDelete,
-	GetClassMethodDelete,
+	GetObjectDelete,
+	PropertyDelete,
+	getorSetPropertyDelete,
+	GetorSetMoveProperty,
+	MoveProperty,
+	LiteralRename,
+	LiteralPush,
+	propertyPush,
+	PropertyPushMD,
+	
+	getPropertyPush,
+	setPropertyPush,
+	GeneralizeProperty,
+	GeneralizePropertyBefore,
+	ChangeType
 	
 
 }

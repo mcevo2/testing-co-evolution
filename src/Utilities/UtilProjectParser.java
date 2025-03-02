@@ -56,7 +56,9 @@ public class UtilProjectParser {
 	    return project;
 		
 	}
-public static IJavaProject getJavaProject(IProject project) {
+	
+
+	public static IJavaProject getJavaProject(IProject project) {
         
         IJavaProject javaProj = JavaCore.create(project);
         if (javaProj != null && javaProj.exists()) {
@@ -88,6 +90,7 @@ public static ArrayList<ICompilationUnit> getCompilationUnits(IProject project) 
 			    			if(javaEle instanceof ICompilationUnit){//alternativley check if the element kind is == 5, it is CompilationUnit
 			    				ICompilationUnit compilUnit = (ICompilationUnit) javaEle;
 			    				//Next instruction is another way to get ICompilationUnit
+			    				
 			    		//	ICompilationUnit compilUnit= JavaCore.createCompilationUnitFrom((IFile)javaEle.getCorrespondingResource());
 
 			    				if (compilUnit != null) {
@@ -120,6 +123,67 @@ public static ArrayList<ICompilationUnit> getCompilationUnits(IProject project) 
 		
 		return units;
 	}
+
+
+public static ICompilationUnit getCompilationUnit(IProject project, String filename) {
+	
+ICompilationUnit unit = null;
+	
+	try {
+		
+		if (project.hasNature(JavaCore.NATURE_ID)) {
+		    IJavaProject javaProject =getJavaProject(project);
+		    javaProject.open(null);
+		    //javaProject.getResource().refreshLocal(IResource.DEPTH_INFINITE, null);
+		    
+		    for(IPackageFragment packageFrag : javaProject.getPackageFragments()){
+		    	
+		    	if(packageFrag.getPath().getFileExtension() == null){
+		    		//System.out.println("package fragment >> "+packageFrag);
+		    		
+		    		for(IJavaElement javaEle : packageFrag.getChildren()){
+		    			//System.out.println("comp unit"+ javaEle.getClass());
+		    			if(javaEle instanceof ICompilationUnit){//alternativley check if the element kind is == 5, it is CompilationUnit
+		    				ICompilationUnit compilUnit = (ICompilationUnit) javaEle;
+		    				//Next instruction is another way to get ICompilationUnit
+		    				
+		    		//	ICompilationUnit compilUnit= JavaCore.createCompilationUnitFrom((IFile)javaEle.getCorrespondingResource());
+
+		    				if (compilUnit != null) {
+		    					System.out.println(" Comparing : "+compilUnit.getElementName()+ "  with "+filename);
+		    					if(compilUnit.getElementName().equals(filename))
+		    					{
+		    						
+		    						System.out.println(" Find the CU :D");
+		    						unit=compilUnit;
+		    					}
+		    					
+		    				}
+		    			}
+		    		}
+
+
+		    	} // we ignore the jar files of a project under src folder else if(!packageFrag.getPath().getFileExtension().equals("jar")){}
+		    
+		    }
+		}
+		
+	} catch(ResourceException e){
+		System.out.println("\n ******** Project does not existsi or is not java ******** \n");
+		e.printStackTrace();
+	}
+	catch (JavaModelException e) {
+		// TODO Auto-generated catch block
+		//here treat if a java class could not be oppened
+		e.printStackTrace();
+	} catch (CoreException e) {
+		// TODO Auto-generated catch block
+		//here is when the project is not java >> put a pop up frame saying it
+		e.printStackTrace();
+	}
+	
+	return unit;
+}
 
 
 }

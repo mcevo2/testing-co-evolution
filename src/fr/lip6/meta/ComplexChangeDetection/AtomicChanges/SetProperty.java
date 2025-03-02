@@ -27,4 +27,14 @@ public class SetProperty extends AtomicChange{
 		this.type = type;
 		this.basic = basic;
 	}
+	// This is added lately, so update the other construction from live recording
+		private String container = "";
+		
+		public String getContainer() {
+			return container;
+		}
+		public void setContainer(String container) {
+			this.container = container;
+		}
+		
 }
